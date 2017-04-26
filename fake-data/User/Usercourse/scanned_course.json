@@ -1,0 +1,28 @@
+{
+	"status": "success",
+	"data": [
+		{
+			"course_id": "361",
+			"course_name": "Check Point流量和连接监控",
+			"bg_thumb_img": "http://img.otpub.com/upfile/16/08/11/57ac29e26dfb1.jpg",
+			"amount": "0.00",
+			"title": "Oracle",
+			"scanned_time": "2016-12-23 14:08",
+			"top": 0,
+			"is_free": 1
+		},
+		{
+			"course_id": "361",
+			"course_name": "Check Point流量和连接监控test111",
+			"bg_thumb_img": "http://img.otpub.com/upfile/16/08/11/57ac29e26dfb1.jpg",
+			"amount": "0.00",
+			"title": "Oracle",
+			"scanned_time": "2016-12-23 14:08",
+			"top": 1,
+			"is_free": 0
+		}
+	],
+	"msg": "获取成功",
+	"referer": "",
+	"state": "success"
+}

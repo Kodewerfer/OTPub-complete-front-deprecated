@@ -1,0 +1,232 @@
+&.course-page-inner {
+    //  header
+    .course-head {
+        margin: 1.5em 0;
+        border: 1px solid #ccc;
+        padding: 3em 2em;
+        .clearfix();
+        .lefty {
+            float: left;
+            width: 43%;
+            .img-holder {
+                position: relative;
+                img {
+                    width: 100%;
+                    &.top-tag {
+                        position: absolute;
+                        width: auto;
+                        top: 0;
+                        right: 0;
+                    }
+                }
+                .img-btm {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    padding: 1em 2.35em;
+                    background-color: rgba(1, 1, 1, .6);
+                    color: white;
+                    .add-favi {
+                        &>* {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        i {
+                            font-size: 22px;
+                            color: #eca804;
+                            margin-right: .5em;
+                        }
+                    }
+                    .teacher-name {
+                        padding-top: 3px;
+                        float: right;
+                    }
+                }
+            }
+            .bshare-to {
+                margin-top: 3em;
+                span:first-child {
+                    margin-right: .5em;
+                    i.fa {
+                        color: #529db4;
+                        font-size: 1.35em;
+                        margin-right: .15em;
+                    }
+                }
+            }
+        }
+        .righty {
+            float: left;
+            width: 56%;
+            padding-left: 2.5em;
+            &>h1 {
+                font-weight: 600;
+                color: black;
+                margin-bottom: 1em;
+            }
+            &>p {
+                color: #989898;
+                margin-bottom: 1em;
+                height: 1.25em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .price-row {
+                margin-bottom: 2em;
+                &>* {
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+                h1,
+                h2 {
+                    font-size: 26px;
+                    color: @colorAct;
+                }
+                span.off {
+                    margin-left: 1em;
+                    color: #989898;
+                }
+            }
+            .course-overview {
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    td {
+                        background-color: #f8f8f8;
+                        border: 1px solid #d2d1d1;
+                        vertical-align: middle;
+                        text-align: center;
+                        padding: 1em 0;
+                        p {
+                            margin-bottom: .5em;
+                        }
+                        span {
+                            color: @colorAct;
+                        }
+                    }
+                }
+            }
+            .btn-row {
+                margin-top: 2em;
+                font-size: 14px;
+                .btn-buynow {
+                    .mixin_btn-solid();
+                }
+                .btn-buylater {
+                    margin-left: 1em;
+                    .mixin_btn-hollow();
+                }
+            }
+        }
+    } // body
+    .inner-body {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 8em; // alrighty then..hacking
+        .l-col-9 {
+            padding-left: 0;
+        }
+        .l-col-3 {
+            padding-right: 0;
+        }
+        &>* {
+            float: right;
+        }
+    }
+    .teacher-infos {
+        .tab-head {
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-width: 1px 0;
+            span {
+                .mixin_tabs();
+            }
+        }
+        .tab-body {
+            border: 1px solid #ddd;
+            border-top: 0;
+            padding: 3em 2em;
+            color: #868585;
+            &>img {
+                width: 100%;
+                margin-bottom: 1.5em;
+            }
+            h2 {
+                color: #666666;
+                margin-bottom: .35em;
+            }
+            p.teacher-desc {
+                margin-top: 1em;
+                text-indent: 2em;
+            }
+        }
+    }
+    .contents-section {
+        .section-head {
+            z-index: 999;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-width: 1px 0;
+            .clearfix();
+            &>span {
+                .mixin_tabs();
+            }
+            .price-buy {
+                display: none;
+                margin-right: 1em;
+                padding: 8px 0;
+                float: right;
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &>span {
+                    margin-right: 1.25em;
+                    color: @colorAct;
+                }
+                .btn-buynow {
+                    .mixin_btn-solid();
+                    font-size: 14px;
+                    padding: .8em 1em;
+                }
+            }
+        }
+        .section-body {
+            border: 1px solid #ddd;
+            border-top: 0;
+            padding: 3.5em 3em;
+            .contents-main {
+                display: none;
+                position: relative;
+                iframe {
+                    border: none;
+                    width: 100%;
+                }
+            }
+            .btm-adds {
+                margin-top: 3em;
+                width: 100%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .recommanded {
+        .recommanded-head {
+            margin-top: 2em;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-width: 1px 0;
+            font-size: 14px;
+            cursor: pointer;
+            span {
+                .mixin_tabs();
+            }
+        }
+        .blockies {
+            .mixin_recom-blocks();
+        }
+    }
+}

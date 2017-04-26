@@ -1,0 +1,63 @@
+<div class="my-members" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的课程 - 查看详情</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+
+        <!--no orders founded-->
+        <no-data alert-msg="暂无数据" ng-show="$ctrl.showNoData"></no-data>
+
+
+        <!-- top filter search bar -->
+        <div class="search-bar" ng-show="$ctrl.showDataTable">
+            <div class="search-block">
+                <input type="text" placeholder="学员信息" ng-model="$ctrl.tableFilter">
+                <i class="fa fa-search"></i>
+            </div>
+            <a href="" class="btn-search" ng-click="$ctrl.filterData()">搜索</a>
+
+            <div class="righty-wrapper">
+                <a href="" class="btn-extract">导出成绩</a>
+            </div>
+
+        </div>
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th>姓名</th>
+                <th>公司</th>
+                <th>职位</th>
+                <th>手机号</th>
+                <th>用户名</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in $ctrl.theListPaged">
+                    <td><span>{{member.realname}}</span></td>
+                    <td class="entp-name"><span>{{member.company}}</span></td>
+                    <td><span>{{member.branch}}</span></td>
+                    <td><span>{{member.mobile}}</span></td>
+                    <td class="user-name"><span>{{member.username}}</span></td>
+                    <td>
+                        <a href="" ui-sref=""><span>查看成绩</span></a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

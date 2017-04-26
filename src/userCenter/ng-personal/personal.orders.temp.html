@@ -1,0 +1,103 @@
+<div class="my-orders" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的订单</h2>
+        </div>
+        <div class="filter-section" ng-show="$ctrl.showTopFilters">
+            <a href="" ng-click="$ctrl.setListFilter('',0)"> <span ng-class="{active:$ctrl.currentFilterType === 0}">全部</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({pay_status:1},1)"><span ng-class="{active:$ctrl.currentFilterType === 1}">已付款</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({pay_status:0},2)"><span ng-class="{active:$ctrl.currentFilterType === 2}"> 未付款</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({comment_status:1,pay_status:1},3)"><span ng-class="{active:$ctrl.currentFilterType === 3}">已评价</span></a >
+            <a href="" ng-click="$ctrl.setListFilter({comment_status:0},4)"><span ng-class="{active:$ctrl.currentFilterType === 4}">未评价</span></a>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data-course alert-msg="您还没购买任何课程" ng-show="$ctrl.showNoData"></no-data-course>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th colspan="3">课程名称</th>
+                <th>购买时间</th>
+                <th>有效期</th>
+                <th>订单号</th>
+                <th>总价</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="orderItem in $ctrl.ordersListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="order-status">
+                        <div>
+                            <a href="">
+                                <span ng-class="['status-payment',{active:!orderItem.pay_status}]">{{orderItem.pay_status|payStatusFilter}}</span>
+                            </a>
+                        </div>
+                        <div ng-hide="!orderItem.pay_status">
+                            <span ng-class="['status-comment',{active:!orderItem.comment_status}]">{{orderItem.comment_status|commentStatusFilter}}</span>
+                        </div>
+                    </td>
+                    <td class="course-title">
+                        <img ng-src="{{orderItem.bg_thumb_img}}" alt=""> <span>{{orderItem.course_name}}</span>
+                    </td>
+                    <td class="order-date">
+                        <span>{{orderItem.pay_time}}</span>
+                    </td>
+                    <td class="order-date">
+                        <span>{{orderItem.begin_time}}至{{orderItem.end_time}}</span>
+                    </td>
+                    <td>
+                        <span>{{orderItem.order_sn}}</span>
+                    </td>
+                    <td>
+                        <span>{{orderItem.amount}}</span>
+                    </td>
+                    <td class="order-actions">
+                        <div ng-switch="orderItem.pay_status">
+                            <a ng-switch-when="0" ng-href="/User/Cart/courseorder/id/{{orderItem.goods_id}}.html"><span class="action-first">立即购买</span></a>
+                            <a ng-switch-when="1" ng-href="/Course/detail/index/id/{{orderItem.goods_id}}.html"><span class="action-first">学习课程</span></a>
+                        </div>
+                        <div ng-hide="orderItem.comment_status||!orderItem.pay_status">
+                            <a href="" ng-click="$ctrl.commentWindow.addComment(orderItem.goods_id)"><span class="action-second">评价课程</span></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.ordersList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+    <!-- commenting on a brought course. -->
+    <div class="add-comment" ng-show="$ctrl.commentWindow.isOpen">
+        <div class="add-comment-mask" ng-click="$ctrl.commentWindow.closeWindow()"></div>
+        <div class="add-comment-inner">
+            <h3>评价课程 <i class="fa fa-close" ng-click="$ctrl.commentWindow.closeWindow()"></i></h3>
+            <div class="comment-content">
+                <p class="error-msg" ng-show="$ctrl.commentWindow.isErrorOccured">添加评价失败，请稍候重试。</p>
+                <p class="error-msg" ng-show="$ctrl.commentWindow.isCommentEmpty">请输入评价内容</p>
+                <textarea ng-hide="$ctrl.commentWindow.isCommentComplete" rows="5" cols="" ng-model="$ctrl.commentWindow.commentContents"></textarea>
+                <star-rating set-score="$ctrl.commentWindow.starScore=$event.score"></star-rating>
+                <p class="comment-complete" ng-show="$ctrl.commentWindow.isCommentComplete">
+                    添加评价成功！
+                </p>
+                <a href="" ng-hide="$ctrl.commentWindow.isCommentComplete" class="btn-add-comment" ng-click="$ctrl.commentWindow.sendComment()">添加评价</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

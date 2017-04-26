@@ -1,0 +1,26 @@
+<!--the left side list-->
+<div class="l-col-3 lefty-menu">
+
+    <!---->
+    <ul class="big-button">
+        <li class="">
+            <a href="" ui-sref=".courses" ui-sref-active="active">
+                <i class="fa fa-book fa-3x"></i>
+                <h3>我的课程</h3>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<!--right side, main contents and so on.-->
+<div class="l-col-9 main-area">
+
+    <!-- top display section. VIEW-PORT-->
+    <div class="top-bar-holder" ui-view="topBar">
+    </div>
+
+    <!--main content area. VIEW-PORT-->
+    <div class="contents-section provider" ui-view="content">
+    </div>
+
+</div>

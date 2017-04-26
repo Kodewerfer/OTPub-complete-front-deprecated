@@ -1,0 +1,37 @@
+<div class="my-resume">
+
+    <div class="view-head">
+        <div>
+            <h2>我的简历</h2>
+        </div>
+    </div>
+
+    <div class="view-body">
+        <div class="row">
+            <div class="l-col-5 img-holder">
+                <img src="../../../images/userCenter/icon-resume.jpg" alt="">
+            </div>
+            <div class="l-col-7 text-holder">
+                <p>OTPUB学习平台拥有上千家合作企业与厂商资源，为IT从业人员提供推荐工作服务！
+                </p>
+                <p>如有找工作需求的学员，请将简历发送给我们，并注明您的工作需求，我们会按照您的要求把您的简历发送给用人单位！</p>
+                <button class="btn-submit" type="file" ngf-select="$ctrl.upload($file, $invalidFiles)">
+                    <i class="fa fa-upload"></i><span>上传简历</span>
+                </button>
+                <p class="notice">Ps:简历上传必须为.doc或.pdf为后缀，简历中增加照片会增加面试机会哦！</p>
+            </div>
+        </div>
+    </div>
+    <!--after edit pop out-->
+    <div class="popout" ng-show="$ctrl.openPopout">
+        <div class="pop-mask" ng-click="$ctrl.closePopout()"></div>
+        <div class="pop-inner">
+            <p ng-show="$ctrl.isSucceed">上传成功</p>
+            <p ng-hide="$ctrl.isSucceed||$ctrl.replyMsg">上传中</p>
+            <div class="progress-bar">
+                <div class="progress" style="width:{{$ctrl.uploadProgress}}%"></div>
+            </div>
+            <p ng-show="$ctrl.replyMsg">{{$ctrl.replyMsg}}</p>
+        </div>
+    </div>
+</div>

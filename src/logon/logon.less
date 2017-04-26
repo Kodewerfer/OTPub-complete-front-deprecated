@@ -1,0 +1,209 @@
+.page-contents-wrapper {
+  @import '../less-components/bias/config.less';
+  @import '../less-components/common.less';
+  @import '../less-components/grid.less';
+  @import '../less-components/mic.less';
+  @import '../less-components/utils.less';
+  // header
+  .log-head {
+    padding: 2em 0;
+
+    .container > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .logo-right {
+      margin-left: 18px;
+      border-left: 1px solid #ccc;
+
+      h2 {
+        color: black;
+        padding: 1em;
+        font-weight: 500;
+      }
+    }
+  }
+  // central
+  .log-central {
+    background: url("../../images/logon/login_back.jpg") center center no-repeat;
+    height: 530px;
+    min-height: 10em;
+    text-align: right;
+
+    .floater {
+      text-align: left;
+      background-color: #fff;
+      margin: 3em;
+      padding: 2em;
+      display: inline-block;
+
+      .thirdp-register & {
+        h2 {
+          color: @colorAct;
+          font-weight: 500;
+          margin-bottom: 1.5em;
+        }
+      }
+
+      .type-select {
+        text-align: center;
+
+        .form-block {
+          display: inline-block;
+          font-size: 14px;
+          margin-left: 3.5em;
+
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .info-inputs {
+        padding: 3em 0;
+
+        input {
+          display: block;
+          font-size: 14px;
+          width: 100%;
+          padding: 1em 1.5em;
+          border: 1px solid #ccc;
+
+          &+input {
+            margin-top: .6em;
+          }
+        }
+        // 
+        .thirdp-register & {
+          .capcha {
+            font-size: 14px;
+            margin-top: .5em;
+            padding: .5em .35em .5em 0;
+            border: 1px solid #ccc;
+
+            & > * {
+              vertical-align: middle;
+              display: inline-block;
+            }
+
+            input {
+              display: inline-block;
+              padding: 0;
+              border: 0;
+              outline: 0;
+              width: 79%;
+              padding-left: 1.5em;
+            }
+
+            a,
+            span {
+              text-align: center;
+              padding: .5em 0;
+              width: 75px;
+              display: inline-block;
+              font-size: 14px;
+              background-color: #dbd8d3;
+              color: black;
+            }
+          }
+        }
+      }
+
+      .lower-row {
+        padding-bottom: 3em;
+        .clearfix();
+
+        & > label {
+          float: left;
+          vertical-align: middle;
+        }
+
+        .forg-pass {
+          float: right;
+          font-size: 14px;
+
+          &:hover {
+            color: @colorAct;
+          }
+        }
+      }
+
+      .log-btn {
+        text-align: center;
+        padding-bottom: 2em;
+
+        button {
+          cursor: pointer;
+          display: inline-block;
+          outline: 0;
+          background: url("../../images/logon/logBtn.jpg");
+          width: 392px;
+          height: 57px;
+        }
+
+        .thirdp-register & {
+          padding-bottom: 0;
+
+          button {
+            background: url("../../images/logon/regBtn.jpg");
+            height: 43px;
+          }
+        }
+      }
+
+      .bottom-row {
+        .clearfix();
+        padding-bottom: 1em;
+
+        .thirdparty {
+          float: left;
+
+          & > * {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 14px;
+          }
+
+          a {
+            margin-left: .5em;
+          }
+
+          a+a {
+            margin-left: .5em;
+          }
+        }
+
+        .rigernow {
+          float: right;
+          color: @colorAct;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  // footer
+  .log-footer {
+    padding-top: 5em;
+    padding-bottom: 3em;
+    text-align: center;
+
+    table {
+      margin: auto;
+      width: 60%;
+      margin-bottom: 2em;
+
+      td {
+        font-size: 13px;
+
+        &:hover {
+          color: @colorAct;
+        }
+      }
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+}

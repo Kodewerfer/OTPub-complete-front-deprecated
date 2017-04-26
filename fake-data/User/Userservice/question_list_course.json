@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "list": [
+    {
+      "id": "1",
+      "username": "qwerty333333",
+      "avatar": "",
+      "user_id": "10368",
+      "play_time": "02:00",
+      "question": "aaaaaaaaaaa？",
+      "answer": "这是一个严肃的问题 需要谨慎的思考一下啊啊啊啊",
+      "user_type": 1,
+      "answer_status": 1
+    },
+    {
+      "id": "3",
+      "username": "qwerty333333",
+      "avatar": "",
+      "user_id": "10368",
+      "play_time": "02:00",
+      "question": "aaaaaaaaaaa？",
+      "answer": "这是一个严肃的问题 需要谨慎的思考一下啊啊啊啊",
+      "user_type": 1,
+      "answer_status": 1
+    },
+    {
+      "id": "2",
+      "username": "qwerty333333",
+      "avatar": "",
+      "user_id": "1036228",
+      "play_time": "02:00",
+      "question": "喵喵喵喵？",
+      "answer": "这是一个严肃的问题 需要谨慎的思考一下",
+      "user_type": 0,
+      "answer_status": 1
+    }
+  ],
+  "msg": "获取成功",
+  "referer": "",
+  "state": "success"
+}

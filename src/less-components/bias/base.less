@@ -1,0 +1,133 @@
+html {
+  box-sizing: border-box;
+  touch-action: manipulation;
+  // DO NOT break English words.
+  /*word-break: break-all;*/
+  // DO break Chinese words.
+  word-wrap: break-word;
+}
+
+* {
+  word-break: inherit;
+  word-wrap: inherit;
+  box-sizing: inherit;
+  *:after, *:before {
+    word-break: inherit;
+    word-wrap: inherit;
+    box-sizing: inherit;
+  }
+}
+
+a {
+  color: inherit;
+  &:visited, &:hover, &:active {
+    color: inherit;
+  }
+}
+
+html {
+  font: @baseFontSzie/@baseLineHeight Microsoft YaHei;
+  height: 100%;
+}
+
+body {
+  margin: auto;
+  height: 100%;
+  color: @fontBaseColor;
+  min-width: @bodyMinWidth;
+  background-color: @generalBackGroundColor;
+  // letter-spacing: 1.5px;  
+}
+
+// style resets.
+html, body, table, tr, th, td, ul, ol, li, dl, dt, dd, div, p, span, h1, h2, h3, h4, h5, h6, hr, form, select, input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+input, label, button {
+  border: none;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+img {
+  display: inline-block;
+  border: none;
+  vertical-align: top;
+  &.resp {
+    width: 100%;
+  }
+}
+
+textarea:focus, input:focus {
+  outline-color: #eb5e18;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  color: inherit;
+  line-height: 1.25em;
+}
+
+p, span, h1, h2, h3, label {
+  overflow: hidden;
+}
+
+p, span {
+  line-height: 1.25em;
+}
+
+// utility classes
+.no-wrap {
+  white-space: nowrap;
+}
+
+.form-row {
+  &>* {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    vertical-align: middle;
+    &:first-child {
+      width: 35%;
+    }
+  }
+}
+
+.clearfix() {
+  *zoom: 1;
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  /* margin: 0 5% 0 6%; */
+  max-width: @containerWidth;
+  width: 80%;
+  overflow: hidden;
+  .clearfix();
+}
+
+@media @containerBreakPoint {
+  .container {
+    width: 90%;
+  }
+}
+
+@media @containerCollapsePoint {
+  .container {
+    width: 100%;
+  }
+}

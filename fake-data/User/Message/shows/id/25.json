@@ -1,0 +1,12 @@
+{
+    "status": "success",
+    "data": {
+        "id": "25",
+        "subject": "作为一名帅哥，那不是我的目标",
+        "content": "<a href='#'>links!</a> and other <em>stuff</em>",
+        "create_time": "2015-04-24 11:30"
+    },
+    "msg": "获取失败",
+    "referer": "",
+    "state": "success"
+}

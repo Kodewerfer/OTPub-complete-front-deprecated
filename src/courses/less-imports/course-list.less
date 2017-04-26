@@ -1,0 +1,172 @@
+// 课程列表页面。
+&.course-list {
+  // this page is bit different.
+  p, span {
+    font-size: 13px;
+  }
+  .ad-space {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .structural-row {
+    & > * {
+      float: right;
+    }
+  }
+  .crumb-trail {
+    padding: .75em .25em;
+    font-size: 14px;
+  }
+  // left parts
+  .filters-table {
+    table {
+      width: 100%;
+      border: 1px solid #ccc;
+      text-align: left;
+      border-collapse: collapse;
+      tr {
+        border: 1px solid #ccc;
+        th {
+          width: 10%;
+          vertical-align: top;
+          padding-top: 1.7em;
+          font-weight: 600;
+          text-align: right;
+          span {
+            padding-right: 1em;
+            display: inline-block;
+          }
+        }
+        td {
+          vertical-align: middle;
+          padding-top: 1em;
+          padding-bottom: .35em;
+          padding-right: 1em;
+          span {
+            margin-left: .35em;
+            text-align: center;
+            display: inline-block;
+            min-width: 2em;
+            padding: .75em;
+            &.active, &:hover {
+              background-color: @colorAct;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sorting-paging {
+    font-size: 14px;
+    margin-top: .75em;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+    cursor: pointer;
+    .clearfix();
+    .sortings {
+      float: left;
+      & > span {
+        // using extracted.
+        .mixin_tabs();
+      }
+    }
+    // the php paging
+    #page {
+      float: right;
+      margin: 1.1em 0 0;
+      padding: 0 2em 0 0;
+    }
+    .pagings {
+      float: right;
+      margin: 1.1em 0 0;
+      padding-right: 2em;
+      position: relative;
+      .clearfix();
+      span {
+        .mixin_paging_block();
+      }
+    }
+  }
+  .result-sheet {
+    margin-top: 1.25em;
+    .result-blockie {    
+      margin-bottom: 2em;
+      .mixin_course-blocks();
+    }
+  }
+  .bottom-paging {
+    .mixin_paging();
+  }
+  .recommanded {
+    margin-top: 3em;
+    margin-bottom: 6em;
+    // extending the sorting-paing thingy above.
+    .recommanded-head {
+      &:extend(.course-list .sorting-paging all);
+      span {
+        &:extend(.course-list .sorting-paging .sortings>span all);
+      }
+    }
+    .blockies {
+      .mixin_recom-blocks();
+    }
+  }
+  // right parts.
+  .tops-list {
+    margin-top: 36px;
+    .list-head {
+      &:extend(.course-list .sorting-paging all);
+      margin-top: 0 !important;
+      span {
+        &:extend(.course-list .sorting-paging .sortings>span all);
+      }
+    }
+    .list-contents {
+      border: 1px solid #ccc;
+      border-top: 0;
+      padding: 1em 1.5em 0;
+      // padding-top: 0;
+      .items {
+        margin-bottom: 1em;
+        .clearfix();
+        .img-holder {
+          float: left;
+          width: 48%;
+          img {
+            width: 100%;
+          }
+        }
+        .img-holder+div {
+          float: right;
+          width: 52%;
+          padding: .25em 1em;
+          p+p {
+            margin-top: .5em;
+            color: #a9a7a7;
+          }
+        }
+        &:hover {
+          .img-holder+div {
+            p:first-child {
+              color: @colorAct;
+            }
+          }
+        }
+      }
+    }
+  }
+  // adds
+  .adds-block {
+    margin-top: 2em;
+    & > a {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

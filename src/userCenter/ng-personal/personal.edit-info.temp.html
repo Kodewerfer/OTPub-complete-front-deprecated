@@ -1,0 +1,103 @@
+<div class="edit-info">
+    <div class="view-head">
+        <div>
+            <h2>修改资料</h2>
+        </div>
+    </div>
+    <div class="view-body">
+
+        <div class="upper">
+            <div class="user-basic-infos">
+
+                <div class="info-row">
+                    <span>昵称：</span>
+                    <span>{{$ctrl.userInfo.username}}</span>
+                    <a href=""></a>
+                </div>
+
+                <div class="info-row">
+                    <span>手机号：</span>
+                    <span>{{$ctrl.userInfo.mobile}}</span>
+                    <a href="" ng-click="$ctrl.isEditPhoneShown = true"><i class="fa fa-edit"></i>修改绑定手机</a>
+                </div>
+
+                <div class="info-row">
+                    <span>密码：</span>
+                    <span>******</span>
+                    <a href="/User/Login/resetpwd.html"><i class="fa fa-edit"></i>修改密码</a>
+                </div>
+
+            </div>
+            <!---->
+            <div class="user-protrait">
+                <div class="img-holder">
+                    <img ng-src="{{$ctrl.userInfo.avatar}}" alt="">
+                    <div style="width:{{$ctrl.uploadProgress}}%" class="upload-prgress"></div>
+                </div>
+                <button type="file" ngf-select="$ctrl.uploadAvatar($file, $invalidFiles)" ngf-max-size="500KB">修改头像</button>
+                <span class="noty">(文件不能大于500KB)</span>
+            </div>
+
+        </div>
+
+        <div class="lower">
+
+            <div class="form-row">
+                <span>姓名：</span>
+                <input type="text" name="" value="" ng-model="$ctrl.userInfo.realname">
+            </div>
+
+            <div class="form-row">
+                <span>公司名称：</span>
+                <input type="text" name="" value="" ng-model="$ctrl.userInfo.company">
+            </div>
+
+            <div class="form-row">
+                <span>职位：</span>
+                <input type="text" name="" value="" ng-model="$ctrl.userInfo.branch">
+            </div>
+
+            <a href="" ng-click="$ctrl.sendChanges()" class="btn-save">
+                <h3>保存</h3>
+            </a>
+
+        </div>
+
+        <!--edit phone num-->
+        <div class="popout eidt-mobile" ng-show="$ctrl.isEditPhoneShown">
+            <div class="pop-mask" ng-click="$ctrl.isEditPhoneShown = false"></div>
+            <div class="pop-inner" ng-show="$ctrl.needMobile">
+                <p>请绑定一个手机号</p>
+                <p></p>
+                <div class="form-row">
+                    <span>手机号：</span>
+                    <input type="text" name="" value="" ng-model="$ctrl.mobileInfos.mobile">
+                </div>
+                <div class="form-row">
+                    <span>验证码：</span>
+                    <input class="capcha" type="text" name="" value="" ng-model="$ctrl.mobileInfos.capcha">
+                    <a class="btn-send-capcha" ng-class="{disabled:$ctrl.sendBtnText==='已发送'}" href="" ng-click="$ctrl.sendSms()">
+                        {{$ctrl.sendBtnText}} <i ng-show="$ctrl.sendBtnText==='已发送'">({{$ctrl.reSendCountDown}}秒后重试)</i>
+                    </a>
+                </div>
+                <p>{{$ctrl.mobileReplyMsg}}</p>
+                <div>
+                    <a href="" class="btn-save-mobile" ng-click='$ctrl.addMobile()'>保存</a>
+                </div>
+            </div>
+            <div class="pop-inner editPhoneNum" ng-hide="$ctrl.needMobile">
+                <p>请联系客服修改电话</p>
+                <p class="hot-line">400-000-000</p>
+            </div>
+        </div>
+
+        <!--after edit pop out-->
+        <div class="popout" ng-show="$ctrl.replyMsg">
+            <div class="pop-mask" ng-click="$ctrl.replyMsg = false"></div>
+            <div class="pop-inner">
+                <p>{{$ctrl.replyMsg}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="my-notes" ng-cloak>
+
+    <div class="view-head">
+
+        <div>
+            <h2>我的笔记</h2>
+        </div>
+
+        <!--data display table-->
+        <div class="search-bar">
+
+            <div class="search-block">
+                <input type="text" placeholder="" ng-model="$ctrl.listFilter">
+                <i class="fa fa-search"></i>
+            </div>
+            <a href="" class="btn-search" ng-click="$ctrl.setFilter()">搜索</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <no-data ng-show="$ctrl.showNoData" alert-msg="暂无问答"></no-data>
+
+        <div class="note-list">
+
+            <div class="note-item" ng-repeat="dataItem in $ctrl.dataListPaged">
+                <div class="head">
+                    <a ng-href="/Course/Player/play/courseid/{{dataItem.course_id}}.html">
+                        <h4>{{dataItem.course_name}}</h4>
+                    </a>
+                    <span class="time-stamp"><i class="fa fa-play-circle-o"></i>{{dataItem.play_time}}</span>
+                </div>
+                <div class="body">
+                    <p>{{dataItem.note}}</p>
+                </div>
+                <div class="bottom">
+                    <span class="create-time">{{dataItem.add_time}}</span>
+                    <span class="lesson-name">{{dataItem.lesson_name}}</span>
+                    <div class="action-icons">
+                        <span ng-show="dataItem.confirmingDel">
+                            确认删除？
+                        </span>
+                        <a href="" ng-show="dataItem.confirmingDel" ng-click="$ctrl.deleteNote(dataItem.id)">
+                            <i class="fa fa-check"></i>
+                        </a>
+                        <a href="" ng-show="dataItem.confirmingDel" ng-click="dataItem.confirmingDel=false">
+                            <i class="fa fa-close"></i>
+                        </a>
+                        <!--delete-->
+                        <a href="" ng-hide="dataItem.confirmingDel" ng-click="dataItem.confirmingDel=true">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                        <!--edit-->
+                        <a href="" ng-hide="dataItem.confirmingDel" ng-click="$ctrl.editNote.open(dataItem)">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--paging-->
+        <pagination page-size="4" target-data="$ctrl.dataList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+    <!-- edit note -->
+    <div class="add-comment" ng-show="$ctrl.editNote.isOpen">
+        <div class="add-comment-mask" ng-click="$ctrl.editNote.close()"></div>
+        <div class="add-comment-inner">
+            <h3>修改笔记 <i class="fa fa-close" ng-click="$ctrl.editNote.close()"></i></h3>
+            <div class="comment-content">
+                <p class="error-msg" ng-show="$ctrl.editNote.errorMsg">修改失败，{{$ctrl.editNote.errorMsg}}</p>
+                <textarea ng-hide="$ctrl.editNote.isSucceed" rows="5" cols="" ng-model="$ctrl.editNote.target.note"></textarea>
+                <p class="comment-complete" ng-show="$ctrl.editNote.isSucceed">
+                    修改笔记成功！
+                </p>
+                <a href="" ng-hide="$ctrl.editNote.isSucceed" class="btn-add-comment" ng-click="$ctrl.editNote.submit()">修改</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

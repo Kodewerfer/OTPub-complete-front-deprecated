@@ -1,0 +1,84 @@
+.page-contents-wrapper {
+    @import '../less-components/bias/config.less';
+    @import '../less-components/common.less';
+    @import '../less-components/grid.less';
+    @import '../less-components/mic.less';
+    @import '../less-components/utils.less';
+    .banner {
+        width: 100%;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .floor-one {
+        padding: 40px 0 150px;
+        .left-menu {
+            border: 1px solid #dadada;
+            border-bottom: none;
+            li {
+                padding: 25px 50px 25px 55px;
+                border-bottom: 1px solid #dadada;
+                font-size: 18px;
+                font-weight: 500;
+                cursor: pointer;
+                .mixin_oButton();
+                &:hover {
+                    color: white;
+                }
+            }
+            .active {
+                background: @colorAct;
+                color: white;
+            }
+        }
+        .right {
+            .page {
+                text-align: center;
+            }
+        }
+        .right-block {
+            padding: 20px;
+            border: 1px solid #dadada;
+            margin-bottom: 16px;
+            text-align: center;
+            &:hover {
+                .box-hover();
+                border-color: #ed6d00;
+            }
+            .img-holder {
+                img {
+                    width: 100%;
+                }
+            }
+            .text-holder {
+                text-align: center;
+                padding: 20px 0 0;
+                height: 210px;
+                overflow: hidden;
+                p {
+                    text-align: left;
+                    margin-top: 15px;
+                    color: #8c8c8c;
+                }
+            }
+            .see-details {
+                display: inline-block;
+                padding: 15px 40px;
+                font-size: 14px;
+                margin-top: 25px;
+                font-weight: bold;
+                color: #ed6d00;
+                border: 1px solid #cfcfcf;
+                position: relative;
+                span {
+                    padding: 0px 2px;
+                    background: #ed6d00;
+                    color: white;
+                    position: absolute;
+                    left: 45%;
+                    top: -10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+/**
+* Common classes.
+* mainly for tweeking or other minor styles.
+*/
+
+.clearfix() {
+  *zoom: 1;
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+body {
+  overflow: auto;
+}
+
+.form-block {
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+h1 {
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+span {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+// built in paging
+#page {
+  margin: 30px;
+  line-height: 20px;
+  text-align: center;
+  a, span {
+    padding: 3px 10px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    color: #3c3c3c;
+  }
+  a:hover {
+    background: #ccc;
+  }
+  .current {
+    border: 1px solid #eb5e18;
+    background: #eb5e18;
+    color: #fff;
+  }
+  span.total {
+    border: none;
+  }
+}
+
+.page-contents-wrapper {
+  overflow: hidden;
+}
+
+.floor {
+  padding: 2em 0;
+  &.f-one {
+    padding-top: 4em;
+  }
+  &.f-btm {
+    padding-bottom: 0;
+  }
+}
+
+.slider-arrows {
+  background-color: transparent;
+  outline: 0;
+  &:hover {
+    &:before {
+      color: @colorAct;
+    }
+  }
+}
+
+// recommand blockies
+.recommanded-head {
+  .refresh {
+    padding-top: 5px!important;
+    i.fa {
+      font-size: .8em;
+    }
+  }
+}
+
+// slick styles
+.slick-dots {
+  li button:before {
+    font-size: 12px;
+    color: #ccc;
+    opacity: .9;
+  }
+  li.slick-active button:before {
+    // color: @primordial;
+    color: white;
+  }
+}
+
+.type-tag {
+  font-size: 13px;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+  &.tag-free {
+    background-color: red;
+  }
+  &.tag-oem {
+    background-color: #4497d1;
+  }
+  &.tag-exclusive {
+    background-color: #e18c06;
+  }
+}
+
+.btn-details {
+  padding: 10px 25px;
+  display: inline-block;
+}
+
+.bshare-to {
+  .mixin_share_to();
+}
+
+.modal {
+  z-index: 1002;
+}
+.modal-backdrop{
+  z-index: 1001;
+}

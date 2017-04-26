@@ -1,0 +1,16 @@
+@import '../less-components/bias/config.less';
+@import '../less-components/mic.less';
+@import '../less-components/grid.less';
+// 基础变量，尽量引入。
+.page-contents-wrapper {
+  @import '../less-components/common.less';
+  // 课程列表
+  @import './less-imports/course-list.less';
+  // 课程内页
+  @import './less-imports/course-page-inner.less';
+  // 播放页面
+  @import './less-imports/course-watch.less';
+}
+
+// 课程内页分类
+@import './less-imports/course-inner-variations.less';

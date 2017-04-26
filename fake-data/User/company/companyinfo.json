@@ -1,0 +1,13 @@
+{
+    "status": "success",
+    "data": {
+        "companyid": "3",
+        "username": "测试2",
+        "avatar": "../../../images/userCenter/portrait-demo.png",
+        "user": "你猜",
+        "mobile": "15225128067"
+    },
+    "msg": "获取成功",
+    "referer": "",
+    "state": "success"
+}

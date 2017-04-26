@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Newer js should override this-->
+    <script src="../../dist/common.js"></script>
+    <!--common styles.-->
+    <link href="../../dist/compos.css" rel="stylesheet">
+    <!--all the course styles.-->
+</head>
+
+<body>
+
+    <link href="../../dist/courses/coursesStyles.css" rel="stylesheet">
+    <!--jQuery functionalities-->
+    <script src="../../dist/courses/course-watch.js"></script>
+    <!--angular module-->
+    <script src="../../dist/courses/ng-watch.bundle.js"></script>
+
+    <div class="page-contents-wrapper course-watch" ng-app="watchEvo">
+
+        <!-- top bar -->
+        <div class="watch-topbar">
+            <div class="container">
+
+                <div class="course-menu">
+                    <a href=""><span><i class="fa fa-bars"></i>目录</span></a>
+
+                    <div class="course-menu-actual">
+
+                        <div class="menu-head">
+                            <h4>课程总名称</h4>
+                            <a href=""> <span>收起<i class="fa fa-minus"></i></span></a>
+                        </div>
+
+                        <p class="active">第一章：11111111111111111111111111111111111111111111</p>
+                        <ul>
+                            <li class="active"><a href=""><span>1.bla bla bla</span></a></li>
+                            <li><a href=""><span>1.bla bla bla</span></a></li>
+                            <li><a href=""><span>1.bla bla bla</span></a></li>
+
+                        </ul>
+                        <p>第二章：1111</p>
+                        <ul>
+                            <li><a href=""><span>1.bla bla bla</span></a></li>
+                            <li><a href=""><span>1.bla bla bla</span></a></li>
+                            <li><a href=""><span>1.bla bla bla</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="course-name">
+                    <span>移动交互设计</span>
+                </div>
+
+                <div class="course-actions">
+                    <a href=""><span class="back-to-home"><i class="fa fa-home"></i></span></a>
+                    <!-- right action buttons. -->
+                    <a href=""><span><i class="fa fa-share"></i></span></a>
+                    <span class="seperate">|</span>
+                    <a href=""><span><i class="fa fa-commenting"></i></span></a>
+
+                </div>
+
+                <div class="user-infos">
+                    log infos
+                </div>
+
+            </div>
+        </div>
+
+        <!-- video player section -->
+        <div class="watch-main">
+            <div class="container">
+
+                <!--need login-->
+
+                <!--<div class="need-login">
+                    <img src="../../images/course/watch-onhold.jpg" alt>
+                    <div class="action-section">
+                        <p>您还未<i class="alert-text">登录</i>，请在登录后观看视频</p>
+                        <div class="btn-row">
+                            <a class="btn-actions" href>登录</a>
+                            <a class="btn-actions" href>注册</a>
+                        </div>
+                    </div>
+                </div>-->
+
+                <!--video player-->
+
+                <div class="video-wrapper">
+
+                    <video class="video-js vjs-sublime-skin vjs-16-9" id="coursePlayer" data-setup controls preload="auto" poster="http://video-js.zencoder.com/oceans-clip.png">
+                        <source src="http://ydotpub.oss-cn-beijing.aliyuncs.com/57ac26cea9d29.mp4" type="video/mp4">
+                        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that
+                            <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                        </p>
+                    </video>
+
+
+                </div>
+
+                <!--问答/笔记 angular组件-->
+                <watch-side-bar course-id="11" lesson-id="22" course-type="333">
+                </watch-side-bar>
+
+                <!---->
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

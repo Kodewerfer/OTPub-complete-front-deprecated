@@ -1,0 +1,30 @@
+<div class="recommanded">
+    <div class="recommanded-head">
+        <span class="active"><a href=""></a>猜你喜欢</span>
+        <span class="refresh"><a href="" ng-click="$ctrl.refreshContent()"><i class="fa fa-refresh"></i></a></span>
+    </div>
+
+    <div class="row">
+
+        <div class="l-col-3" ng-repeat="recom in $ctrl.recomList">
+
+            <div class="blockies">
+                <a ng-href="/Course/detail/index/id/{{recom.course_id}}.html"></a>
+                <div class="img-holder">
+                    <img ng-src="{{recom.bg_thumb_img}}" alt="">
+                </div>
+                <div class="text-holder">
+                    <p>{{recom.course_name}}</p>
+                    <div class="info-row">
+                        <span ng-if="recom.amount_status" class="type-tag tag-free">免费</span>
+                        <span ng-if="recom.is_changshang" class="type-tag tag-oem">厂商</span>
+                        <span ng-if="recom.is_dujia" class="type-tag tag-exclusive">独家</span>
+                        <span>{{recom.click_count}}人学习</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="my-members" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的成员</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data alert-msg="暂无数据" ng-show="$ctrl.showNoData"></no-data>
+
+        <!--data display table-->
+        <div class="search-bar" ng-show="$ctrl.showDataTable">
+
+            <div class="search-block">
+                <input type="text" placeholder="学员信息" ng-model="$ctrl.tableFilter">
+                <i class="fa fa-search"></i>
+            </div>
+            <a href="" class="btn-search" ng-click="$ctrl.filterData()">搜索</a>
+
+            <div class="righty-wrapper">
+                <a ng-href="{{$ctrl.exportFileAddr}}" class="btn-extract">导出成绩</a>                
+            </div>
+
+        </div>
+
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th>姓名</th>
+                <th>公司</th>
+                <th>职位</th>
+                <th>手机号</th>
+                <th>用户名</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in $ctrl.theListPaged">
+                    <td width="15%"><span>{{member.realname}}</span></td>
+                    <td class="entp-name"><span>{{member.company}}</span></td>
+                    <td><span>{{member.branch}}</span></td>
+                    <td width="20%"><span>{{member.mobile}}</span></td>
+                    <td class="user-name"><span>{{member.username}}</span></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

@@ -1,0 +1,156 @@
+<div class="my-receipt" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的发票</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.ajaxErrorMesg"></error-display>
+
+        <!--data display table-->
+        <div class="table-head">
+
+            <span><i class="fa fa-address-card-o"></i> 收件人管理</span>
+
+        </div>
+
+        <table>
+
+            <thead>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>地址</th>
+                <th>邮编</th>
+                <th>抬头</th>
+                <th>发票类型</th>
+                <th>发票类目</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-show="$ctrl.showNoData">
+                    <td colspan="8" width="100%" class="no-datas">
+                        <p>需要填写收件人信息</p>
+                        <a href="" ng-click="$ctrl.addEdit.open()"><span> <i class="fa fa-plus-circle"></i> 添加收件人</span></a>
+                    </td>
+                </tr>
+                <tr ng-hide="$ctrl.showNoData">
+                    <td>{{$ctrl.recipient.name}}</td>
+                    <td>{{$ctrl.recipient.mobile}}</td>
+                    <td>{{$ctrl.recipient.address}}</td>
+                    <td>{{$ctrl.recipient.zipcode}}</td>
+                    <td>{{$ctrl.recipient.title}}</td>
+                    <td>
+                        <select ng-disabled="true">
+                            <option ng-repeat="type in $ctrl.recType" ng-selected="$ctrl.recipient.invoice_type==type.value" value="{{type.value}}">{{type.text}}</option>                            
+                        </select>
+                    </td>
+                    <td>
+                        <select ng-disabled="true" ng-value="{{$ctrl.recipient.invoice_category}}">
+                            <option ng-repeat="cate in $ctrl.recCate" ng-selected="$ctrl.recipient.invoice_category==cate.value" value="{{cate.value}}">{{cate.text}}</option>                            
+                        </select>
+                    </td>
+                    <td class="actions" width="12%">
+                        <span>
+                            <a href="" ng-click="$ctrl.addEdit.open(true)">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <div class="notices">
+            <p><i>开具金额</i> 消费满<b>人民币100元</b>后可申请开具增值税普通（专用）发票</p>
+            <p>可开发票金额：<b>{{$ctrl.order.amount}}元</b>
+                <ng-switch on="$ctrl.order.status">
+                    <b ng-switch-when="1">(可开)</b>
+                    <b ng-switch-when="0">(不可开)</b>
+                </ng-switch>
+            </p>
+            <p>请您填写具体信息方可开具发票，会以<b>快递形式</b>发送给您，注意查收</p>
+        </div>
+
+        <div class="btn-row">
+            <a href="" class="btn-goInvoice" ng-show="$ctrl.order.status" ng-click="$ctrl.sendRequest()">
+               开具发票
+            </a>
+        </div>
+    </div>
+
+    <!-- edit note -->
+    <div class="add-comment" ng-show="$ctrl.addEdit.isOpen">
+        <div class="add-comment-mask" ng-click="$ctrl.addEdit.close()"></div>
+        <div class="add-comment-inner">
+            <h3> <i class="fa fa-close" ng-click="$ctrl.addEdit.close()"></i></h3>
+            
+            <div class="comment-content">
+                <p class="error-msg" ng-show="$ctrl.addEdit.errorMsg">失败，{{$ctrl.addEdit.errorMsg}}</p>
+                <!--content adding section-->
+                <div>
+                    <div class="form-row">
+                        <span>姓名：</span>
+                        <input type="" name="" value="" placeholder="姓名" ng-model="$ctrl.addEdit.theContent.name">
+                    </div>
+                    <div class="form-row">
+                        <span>电话：</span>
+                        <input type="" name="" value="" placeholder="手机/固话" ng-model="$ctrl.addEdit.theContent.mobile">
+                    </div>
+                    <div class="form-row">
+                        <span>地址：</span>
+                        <input type="" name="" value="" placeholder="地址" ng-model="$ctrl.addEdit.theContent.address">
+                    </div>
+                    <div class="form-row">
+                        <span>邮编：</span>
+                        <input type="" name="" value="" placeholder="邮政编码" ng-model="$ctrl.addEdit.theContent.zipcode">
+                    </div>
+                    <div class="form-row">
+                        <span>抬头：</span>
+                        <input type="" name="" value="" placeholder="发票抬头" ng-model="$ctrl.addEdit.theContent.title">
+                    </div>
+                    <div class="form-row">
+                        <span>发票类型：</span>
+                        <select ng-value="{{$ctrl.recipient.invoice_category}}" ng-model="$ctrl.addEdit.theContent.invoice_type">
+                            <option ng-repeat="type in $ctrl.recType" ng-selected="$ctrl.addEdit.theContent.invoice_type==type.value" value="{{type.value}}">{{type.text}}</option>                            
+                        </select>
+                        <span class="ta_c">发票类目：</span>
+                        <select ng-value="{{$ctrl.recipient.invoice_category}}" ng-model="$ctrl.addEdit.theContent.invoice_category">
+                            <option ng-repeat="cate in $ctrl.recCate" ng-selected="$ctrl.addEdit.theContent.invoice_category==cate.value" value="{{cate.value}}">{{cate.text}}</option>                            
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <p class="alert">(专用发票必须上传三证合一营业执照照片，如有问题请联系客服)</p>
+                        <span class="alert">照片上传</span>
+                        <div class="img-uploader">
+                            <button type="file" ng-hide="$ctrl.addEdit.hideUpload" ngf-select="$ctrl.addEdit.uploadImg($file, $invalidFiles)" name=""
+                                id="">选择图片</button>
+                            <!--photo display-->
+                            <img ng-src="{{$ctrl.addEdit.theContent.photo}}" alt="">
+
+                        </div>
+                        <p ng-show="$ctrl.addEdit.uploadMsg">{{$ctrl.addEdit.uploadMsg}}</p>
+                    </div>
+                </div>
+                <a href="" ng-hide="$ctrl.addEdit.isSucceed" class="btn-add-comment" ng-click="$ctrl.addEdit.submit()">{{$ctrl.addEdit.btnText}}</a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--edit phone num-->
+    <div class="popout" ng-show="$ctrl.isRequestWinOpen">
+        <div class="pop-mask" ng-click="$ctrl.isRequestWinOpen = false"></div>
+        <div class="pop-inner editPhoneNum">
+            <p class="hot-line">{{$ctrl.requestResult}}</p>
+        </div>
+    </div>
+
+</div>

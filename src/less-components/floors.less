@@ -1,0 +1,40 @@
+// out: false
+// a short cut for inserting background images.
+// ----- Floor styles -----
+
+.clearfix() {
+  *zoom: 1;
+
+  &:after,
+  &:before {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.floor {
+  background-position: center bottom;
+  background-repeat: no-repeat;
+
+  .container {
+    height: 100%;
+    background-repeat: no-repeat;
+    .clearfix();
+  }
+
+  .content-wrapper {
+    width: 90%;
+    margin: auto;
+    .clearfix();
+  }
+
+  img.floor-img {
+    display: block;
+    // width: 95%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,62 @@
+<div class="course-participant" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的课程 - 查询学员</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data alert-msg="暂无数据" ng-show="$ctrl.showNoData"></no-data>
+
+
+        <!-- top filter search bar -->
+        <div class="search-bar" ng-show="$ctrl.showDataTable">
+            <div class="search-block">
+                <input type="text" placeholder="学员信息" ng-model="$ctrl.tableFilter">
+                <i class="fa fa-search"></i>
+            </div>
+            <a href="" class="btn-search" ng-click="$ctrl.filterData()">搜索</a>
+
+            <div class="righty-wrapper">
+                <a ng-href="{{$ctrl.exportFileAddr}}" class="btn-extract">导出成员</a>
+            </div>
+
+        </div>
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th>购买课程</th>
+                <th>用户名</th>
+                <th>公司</th>
+                <th>职位</th>
+                <th>购买时间</th>
+                <th>学习时长</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="member in $ctrl.theListPaged">
+                    <td width="25%"><span>{{member.course_name}}</span></td>
+                    <td class="user-name"><span>{{member.username}}</span></td>
+                    <td width="20%"><span>{{member.company}}</span></td>
+                    <td><span>{{member.branch}}</span></td>
+                    <td><span>{{member.begin_time}}</span></td>
+                    <td>
+                        <a><span>{{member.time}}</span></a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

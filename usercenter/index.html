@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js ">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用户中心</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--common styles.-->
+    <link rel="stylesheet" href="../dist/compos.css">
+
+    <script rel="stylesheet" href="../dist/common.js"></script>
+    <!---->
+    <script src="../dist/devTestOnly.js"></script>
+</head>
+
+<body>
+
+    <!--app wise defination-->
+    <script src="../dist/userCenter/user-center.bundle.js"></script>
+
+    <!-- Css -->
+    <link rel="stylesheet" href="../dist/userCenter/user-center-styles.css">
+
+
+    <div class="page-contents-wrapper page-frame" ng-app="userCenter">
+        <div class="container">
+
+            <!-- MAIN VIEWPORT, side bars are contained inside each components-->
+            <div class="row main-view-port" ui-view>
+            </div>
+
+            <!--recommanded contents-->
+            <recommanded-contents></recommanded-contents>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!--the left side list-->
+<div class="l-col-3 lefty-menu">
+
+    <!---->
+    <ul>
+        <li class="heading first">
+            <h3>我的课程</h3>
+        </li>
+        <li>
+            <a href="" ui-sref=".myCourses" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>技术课程</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".subscription" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>卡包管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".broadcast" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>直播预约</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".faviCourses" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>收藏课程</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".browsed" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>浏览课程</span>
+            </a>
+        </li>
+    </ul>
+    <!---->
+    <ul class="second">
+        <li class="heading second">
+            <h3>我的服务</h3>
+        </li>
+        <li>
+            <a href="" ui-sref=".notes" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>我的笔记</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".qna" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>我的问答</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".resume" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>我的简历</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".receipt" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>我的发票</span>
+            </a>
+        </li>
+        <li>
+            <a href="" ui-sref=".orders" ui-sref-active="active">
+                <i class="fa fa-square fa_05"></i> <span>我的订单</span>
+            </a>
+        </li>
+    </ul>
+
+</div>
+<!--right side, main contents and so on.-->
+<div class="l-col-9 main-area">
+
+    <!-- top display section. VIEW-PORT-->
+    <div class="top-bar-holder" ui-view="topBar">
+    </div>
+
+    <!--main content area. VIEW-PORT-->
+    <div class="contents-section personal" ui-view="content">
+    </div>
+
+</div>

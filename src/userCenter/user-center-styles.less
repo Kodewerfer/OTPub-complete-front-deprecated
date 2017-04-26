@@ -1,0 +1,18 @@
+.page-contents-wrapper {
+  // 基础变量，尽量引入。
+  @import '../less-components/bias/config.less';
+  @import '../less-components/mic.less';
+  @import '../less-components/grid.less';
+  @import '../less-components/common.less';
+  // 引入分页面样式
+  // 个人中心首页
+  @import './less-imports/page-frame.less';
+  .contents-section {
+    
+    @import './less-imports/ng-animate.less';
+    @import './less-imports/content-section.less';
+    .bottom-paging, .generic-paging {
+      .mixin_paging();
+    }
+  }
+}

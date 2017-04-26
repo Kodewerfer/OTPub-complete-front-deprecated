@@ -1,0 +1,17 @@
+{
+    "status": "success",
+    "msg": "获取信息成功",
+    "data": [
+        {
+            "goods_id": "171",
+            "begin_time": "2014-09-29",
+            "end_time": "2016-08-24",
+            "comment_type": 0,
+            "course_name": "符合德国质量标准的杀毒软件",
+            "bg_thumb_img": "../../../images/userCenter/course-img-demo.jpg",
+            "order_sn": "201612201450234248",
+            "pay_time": "1970-01-01 08:00",
+            "order_amount": "22.00"
+        }
+    ]
+}

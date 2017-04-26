@@ -1,0 +1,82 @@
+<div class="my-browsed" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>浏览课程</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data-course alert-msg="您还没有浏览过任何课程" ng-hide="$ctrl.theListPaged.length"></no-data-course>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.theListPaged.length">
+            <thead>
+                <th colspan="3">课程名称</th>
+                <th>预览时间</th>
+                <th>价格</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="browsedItem in $ctrl.theListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="top-status">
+                        <div ng-switch="browsedItem.top">
+                            <span class="" ng-switch-when="1">已置顶</span>
+                            <a href="" ng-switch-when="0" ng-click="$ctrl.topStatus.sendToTop(browsedItem.course_id)"><span class="active" >置顶</span></a>
+                        </div>
+                        <div ng-switch="browsedItem.top">
+                            <a href="" ng-switch-when="1" ng-click="$ctrl.topStatus.tornItDown(browsedItem.course_id)"> <span class="active">取消</span></a>
+                            <span ng-switch-when="0">取消</span>
+                        </div>
+                    </td>
+                    <td class="course-title">
+                        <img ng-src="{{browsedItem.bg_thumb_img}}" alt=""> <span>{{browsedItem.course_name}}</span>
+                    </td>
+                    <td class="browsed-date">
+                        <span>{{browsedItem.scanned_time}}</span>
+                    </td>
+                    <td class="order-price">
+                        <ng-switch on="browsedItem.is_free">
+                            <span ng-switch-when="0">{{browsedItem.amount}}</span>
+                            <span ng-switch-when="1">免费</span>
+                        </ng-switch>
+                    </td>
+                    <td class="order-actions">
+                        <div>
+                            <a ng-href="/Course/Player/play/courseid/{{browsedItem.course_id}}.html"><span class="action-second">学习课程</span></a>
+                        </div>
+                        <div ng-if="!browsedItem.is_free">
+                            <a ng-href="/User/Cart/courseorder/id/{{browsedItem.course_id}}.html"><span class="action-first">立即购买</span></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+    <!-- commenting on a brought course. -->
+    <div class="add-comment" ng-show="$ctrl.commentWindow.isOpen">
+        <div class="add-comment-mask" ng-click="$ctrl.commentWindow.closeWindow()"></div>
+        <div class="add-comment-inner">
+            <h3>评价课程 <i class="fa fa-close" ng-click="$ctrl.commentWindow.closeWindow()"></i></h3>
+            <div>
+                <textarea rows="5" cols="" ng-model="$ctrl.commentWindow.commentContents"></textarea>
+                <a href="" class="btn-add-comment" ng-click="$ctrl.commentWindow.sendComment()">添加评价</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>

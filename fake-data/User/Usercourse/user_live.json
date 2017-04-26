@@ -1,0 +1,24 @@
+{
+    "status": "success",
+    "data": [
+        {
+            "id": "1",
+            "title": "深度剖析Oracle Paas云平台111",
+            "thumb": "../../../images/userCenter/course-img-demo.jpg",
+            "start_time": "2015-05-21 09:30",
+            "end_time": "2015-05-21 17:30",
+            "type": 1
+        },
+        {
+            "id": "222",
+            "title": "深度剖析Oracle Paas云平台222",
+            "thumb": "../../../images/userCenter/course-img-demo.jpg",
+            "start_time": "2015-05-21 09:30",
+            "end_time": "2015-05-21 17:30",
+            "type": 2
+        }
+    ],
+    "msg": "获取成功",
+    "referer": "",
+    "state": "success"
+}

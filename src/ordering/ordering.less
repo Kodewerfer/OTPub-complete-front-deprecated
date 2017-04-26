@@ -1,0 +1,184 @@
+       @import '../less-components/bias/config.less';
+       @import '../less-components/common.less';
+       @import '../less-components/grid.less';
+       @import '../less-components/mic.less';
+       @import '../less-components/utils.less';
+       .page-contents-wrapper {
+           .order-center-box {
+               width: 100%;
+               height: 100%;
+               margin-top: 30px;
+               border: 1px solid #cccccc;
+               .order-center {
+                   padding: 10px;
+                   font-size: 16px;
+               }
+               .order-list {
+                   border-top: 1px solid #ed6d00;
+                   border-bottom: 1px solid #cccccc;
+                   div {
+                       padding: 15px 0;
+                       vertical-align: middle;
+                       text-align: center;
+                       font-size: 14px;
+                   }
+               }
+               .order-details {
+                   padding: 15px 0;
+                   border-bottom: 1px solid #cccccc;
+                   div {
+                       text-align: center;
+                       font-size: 14px;
+                   }
+                   .books-name {
+                       text-align: left;
+                   }
+                   .course {
+                       .clearfix();
+                       padding: 0 40px;
+                       img {
+                           width: 30%;
+                           display: inline-block;
+                           float: left;
+                           margin-right: 20px;
+                       }
+                       div {
+                           width: 55%;
+                           float: left;
+                           line-height: 22px;
+                           display: inline-block;
+                       }
+                   }
+                   .number {
+                       padding-top: 20px;
+                   }
+                   .price {
+                       padding-top: 20px;
+                   }
+               }
+               .invoice {
+                   vertical-align: middle;
+                   border-bottom: 1px solid #cccccc;
+                   div {
+                       padding: 18px 18px;
+                       vertical-align: middle;
+                   }
+                   .left-message {
+                       text-align: center;
+                   }
+                   .invoice-right {
+                       border-left: 1px solid #cccccc;
+                   }
+               }
+               .pay {
+                   vertical-align: middle;
+                   border-bottom: 1px solid #cccccc;
+                   div {
+                       padding: 18px 18px;
+                       vertical-align: middle;
+                       div {
+                           button {
+                               font-size: 14px;
+                               padding: .8em 3em;
+                               display: inline-block;
+                               background: #ed6d00;
+                               color: white;
+                               border-radius: 5px;
+                               .mixin_oButton();
+                               img {
+                                   margin-right: 5px;
+                               }
+                           }
+                       }
+                   }
+                   .left-message {
+                       text-align: center;
+                       p {
+                           height: 40px;
+                           line-height: 40px;
+                       }
+                   }
+                   .pay-right {
+                       text-align: center;
+                       border-left: 1px solid #cccccc;
+                   }
+               }
+               .qq {
+                   padding: 20px;
+                   overflow: hidden;
+                   p {
+                       float: right;
+                       display: block;
+                       vertical-align: middle;
+                       span {
+                           display: inline-block;
+                           padding-top: 5px;
+                           margin-right: 15px;
+                       }
+                       img {
+                           display: inline-block;
+                       }
+                   }
+               }
+           }
+           .order-qr-pay {
+               .info-table {
+                   table {
+                       width: 100%;
+                       padding: 1.5em 0;
+                       background-color: #f1f1f1;
+                       text-align: center;
+                       font-size: 14px;
+                       b {
+                           color: @colorAct;
+                       }
+                       i {
+                           font-weight: 600;
+                       }
+                   }
+               }
+               .qr-section {
+                   margin: 4.5em 0;
+                   margin-bottom: 2em;
+                   text-align: center;
+                   img {
+                       display: inline-block;
+                       width: 100%;
+                       max-width: 258px;
+                   }
+                   .btn-return {
+                       color: white;
+                       margin-top: 2em;
+                       display: inline-block;
+                       font-weight: 600;
+                       letter-spacing: 1.35em;
+                       background-color: @colorAct;
+                       padding: 2em 4em;
+                       border-radius: 5px;
+                       .mixin_oButton();
+                   }
+               }
+           }
+           // footer
+           .log-footer {
+               padding-top: 2em;
+               margin-top: 5em;
+               padding-bottom: 2em;
+               text-align: center;
+               border-top: 1px solid #9e9e9e;
+               table {
+                   margin: auto;
+                   width: 60%;
+                   margin-bottom: 2em;
+                   td {
+                       font-size: 13px;
+                       &:hover {
+                           color: @colorAct;
+                       }
+                   }
+               }
+               p {
+                   font-size: 13px;
+               }
+           }
+       }

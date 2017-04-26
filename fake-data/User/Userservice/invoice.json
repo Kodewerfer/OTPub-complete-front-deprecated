@@ -1,0 +1,41 @@
+  {
+    "order_amount": "414.00",
+    "order_status": 1,
+    "status": "success",
+    "list": {
+      "id": "1",
+      "user_id": "10368",
+      "name": "qwe",
+      "mobile": "15225128067",
+      "address": "qwe",
+      "zipcode": "110",
+      "title": "asda",
+      "invoice_type": 1,
+      "invoice_category": 2,
+      "photo": "",
+      "add_time": "147859324"
+    },
+    "types": [
+      {
+        "value": 1,
+        "text": "增值税普通发票"
+      },
+      {
+        "value": 2,
+        "text": "增值税专用发票"
+      }
+    ],
+    "categorys": [
+      {
+        "value": "技术咨询",
+        "text": "技术咨询"
+      },
+      {
+        "value": 2,
+        "text": "数据资讯"
+      }
+    ],
+    "msg": "获取成功！",
+    "referer": "",
+    "state": "success"
+  }

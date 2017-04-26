@@ -1,0 +1,55 @@
+<div class="provider-courses" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的课程</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data-course alert-msg="您还未购买任何课程" ng-show="$ctrl.showNoData"></no-data-course>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th colspan="2">课程名称</th>
+                <th>总购买人数</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="course in $ctrl.theListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="course-title">
+                        <img ng-src="{{course.bg_thumb_img}}" alt=""> <span>{{course.course_name}}</span>
+                    </td>
+                    <td>
+                        <span>{{course.user_num}}</span>
+                    </td>
+                    </td>
+                    <td class="pro-course-actions">
+                        <div>
+                            <a href="" ui-sref=".details({courseId:course.course_id})"><span class="action-blue">查询学员</span></a>
+                        </div>
+                        <div>
+                            <!-- passing the query param -->
+                            <span class="action-orange">总收入：{{course.sum_amount}}</span>
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

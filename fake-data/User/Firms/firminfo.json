@@ -1,0 +1,13 @@
+{
+	"status": "success",
+	"data": {
+		"companyid": "7",
+		"username": "测试测试测试",
+		"avatar": "http://ydotpub.oss-cn-beijing.aliyuncs.com/imgdb/pageimage_1426238040_171.jpeg",
+		"user": "你猜",
+		"mobile": "15225128088"
+	},
+	"msg": "获取成功",
+	"referer": "",
+	"state": "success"
+}

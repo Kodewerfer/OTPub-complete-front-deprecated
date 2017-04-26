@@ -1,0 +1,57 @@
+<div class="favi-courses" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>收藏课程</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data-course alert-msg="您还没收藏过任何课程" ng-show="$ctrl.showNoData"></no-data-course>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th colspan="2">课程名称</th>
+                <th>收藏时间</th>
+                <th>价格</th>
+                <th>操作</th>
+                <th>删除</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="faviItem in $ctrl.theListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="course-title">
+                        <img ng-src="{{faviItem.bg_thumb_img}}" alt=""> <span>{{faviItem.course_name}}</span>
+                    </td>
+                    <td class="favi-date">
+                        <span>{{faviItem.input_time}}</span>
+                    </td>
+                    <td width="10%">
+                        <span>{{faviItem.amount}}</span>
+                    </td>
+                    <td class="order-actions">
+                        <div>
+                            <a ng-href="/Course/detail/index/id/{{faviItem.course_id}}.html"><span class="action-first">查看课程</span></a>
+                        </div>
+                    </td>
+                    <td class="favi-delete">
+                        <a href="" ng-click="$ctrl.deleteAct(faviItem.course_id)"><span>删除</span></a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

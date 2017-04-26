@@ -1,0 +1,7 @@
+<div class="error-display">
+    <h3>数据加载错误，请刷新重试。</h3>
+    <a href="" ng-click="$ctrl.toggleDetails()">显示详情<i class="fa fa-caret-down"></i></a>
+    <div class="fetch-error-details" ng-show="$ctrl.isDetailsShowing">
+        <p>{{$ctrl.errorDetails}}</p>
+    </div>
+</div>

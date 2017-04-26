@@ -1,0 +1,27 @@
+/*
+    This file is for importing common less/css components to the page.
+
+    Some pages(Like index.html) have all the components imported INSIDE the main less file, 
+      meaning it will only be a huge-ass css file on the page.
+       
+    This file is intended for other pages that don't or can't have a huge-ass, 
+      so that these compos wouldn't be downloaded over and over. 
+*/
+
+
+/* 
+    Watch out for path issues.
+*/
+
+@import '../bower_components/normalize-css/normalize.css';
+@import './less-components/bias/config.less';
+@import './less-components/bias/base.less';
+@import './less-components/floors.less';
+// header and footer import
+@import './less-components/header_footer.less';
+// page fragments
+@import './less-components/right-side-bar.less';
+// font awesome
+@import '../bower_components/font-awesome/less/font-awesome.less';
+// utils class need to be able to override all.
+@import './less-components/utils.less';

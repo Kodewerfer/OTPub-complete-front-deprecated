@@ -1,0 +1,60 @@
+&.teacher-list {
+    .banner {
+        width: 100%;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .floor-one {
+        padding: 40px 0 150px;
+        .container{
+            overflow: visible;
+        }
+        .left-menu {
+            border: 1px solid #dadada;
+            border-bottom: none;
+            li {
+                padding: 25px 50px 25px 55px;
+                border-bottom: 1px solid #dadada;
+                font-size: 18px;
+                font-weight: 500;
+                .mixin_oButton();
+                &:hover {
+                    transition: all .35s;
+                    color: white;
+                }
+            }
+            .active {
+                background: @colorAct;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+    .right-block {
+        padding: 20px;
+        border: 1px solid #dadada;
+        margin-bottom: 16px;
+        &:hover {
+            transform: scale(1.01);
+            transition: all .35s;
+            .box-hover();
+            border-color: #ed6d00;
+            cursor: pointer;
+        }
+        .img-holder {
+            img {
+                width: 100%;
+                // height: 229px;
+            }
+        }
+        .text-holder {
+            text-align: center;
+            padding: 20px 0 0;
+            p {
+                text-align: left;
+                padding-top: 13px;
+            }
+        }
+    }
+}

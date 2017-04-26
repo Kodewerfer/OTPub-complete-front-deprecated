@@ -1,0 +1,557 @@
+/*
+    Mixins
+
+    these contents wouldn't be output to the actual css unless it's used somewhere.
+
+    除非在引入的less文件中使用，否则这些mixin将不会被全部包含在最终css里。
+*/
+
+// box shadow hoverer.
+.mixin_oButton() {
+    cursor: pointer;
+    outline: 0;
+    &:hover {
+        background-color: lighten(@colorAct, 10%);
+    }
+    &:active {
+        background-color: darken(@colorAct, 10%);
+    }
+}
+
+.box-hover() {
+    position: relative;
+    z-index: 99;
+    box-shadow: 0 0 15px;
+}
+
+// a block display for a video(course)
+.mixin_course-blocks() {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ddd;
+    .img-holder {
+        width: 100%;
+        img {
+            width: 100%;
+            &.top-tag {
+                position: absolute;
+                width: auto;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+    .text-holder {
+        padding: 1.5em 1em;
+        p {
+            height: 2.5em;
+            overflow: hidden;
+        }
+        .info-row {
+            .clearfix();
+            margin-top: 1.5em;
+            margin-bottom: 3.5em;
+            .price {
+                float: left;
+                color: @colorAct;
+            }
+            .price+span {
+                float: right;
+                color: #ccc;
+            }
+        }
+        .btm-row {
+            .clearfix();
+            .type-tag {
+                float: left;
+            }
+            .learn-now {
+                float: right;
+                font-size: 14px;
+                color: #009bfd;
+            }
+        }
+    }
+    &:hover {
+        transition: all .5s;
+        border-color: @colorAct;
+        p {
+            font-weight: 600;
+        }
+        .box-hover();
+    }
+}
+
+// common styling for "recommand for you" blocks
+.mixin_recom-blocks() {
+    .mixin_course-blocks();
+    position: relative;
+    margin-top: 1.5em;
+    a {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    .info-row {
+        margin-top: 1em !important;
+        margin-bottom: 1em !important;
+        .type-tag {
+            margin-top: 0;
+            float: left!important;
+            &+.type-tag {
+                margin-left: .35em;
+            }
+        }
+        span {
+            margin-top: .15em;
+            float: right;
+        }
+    }
+}
+
+// course page paging styles.
+.mixin_paging_block() {
+    display: inline-block;
+    position: relative;
+    cursor: not-allowed;
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    padding: .35em .45em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    &.active,
+    &:hover {
+        border-color: @colorAct;
+        color: @colorAct;
+    }
+    &.disabled {
+        display: none;
+    }
+}
+
+.mixin_paging() {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    text-align: center;
+    &>div {
+        display: inline-block;
+        span {
+            position: relative;
+            .mixin_paging_block();
+        }
+    }
+}
+
+// the header tabe thingy
+// usually a span tag.
+.mixin_tabs() {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 0;
+    margin-right: .35em;
+    padding: 1.25em 2.35em;
+    border: 1px solid #f1f1f1;
+    border-width: 0 1px;
+    // the a tag that covers all.
+    a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &.refresh {
+        padding: .25em;
+        font-size: 2em;
+        color: gray;
+        a {
+            position: relative;
+        }
+    }
+    // any appendix
+    &>div {
+        top: 0;
+        right: 0;
+        padding-top: .8em;
+        padding-right: 1.25em;
+        height: 100%;
+        position: absolute;
+        padding-left: .5em;
+        display: inline-block;
+        // vertical-align: top;
+        .fa {
+            &.active {
+                color: @colorAct;
+            }
+            display: block;
+        }
+    }
+    &.active,
+    &:hover {
+        color: @colorAct;
+        background-color: #fff;
+        border-color: #ddd;
+        &>div {
+            color: @fontBaseColor;
+        }
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: @colorAct;
+            content: "";
+        }
+        // spin the refresh icon when hoverer
+        &.refresh {
+            background-color: transparent;
+            border: 0;
+            &:before {
+                width: 0;
+            }
+            i {
+                animation: fa-spin 1.5s infinite;
+            }
+        }
+    }
+}
+
+.mixin_mask() {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    background-color: rgba(29, 29, 29, .6);
+}
+
+.mixin_btn-purches() {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+    background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #cccccc;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+    &:focus,
+    &:hover {
+        color: #333333;
+        text-decoration: none;
+        background-position: 0 -15px;
+        -webkit-transition: background-position .1s linear;
+        -moz-transition: background-position .1s linear;
+        -o-transition: background-position .1s linear;
+        transition: background-position .1s linear;
+    }
+}
+
+// 实心按钮
+.mixin_btn-solid {
+    display: inline-block;
+    color: white;
+    border: 1px solid @colorAct;
+    background-color: @colorAct;
+    padding: 1em 3em;
+    border-radius: 5px;
+    &:hover {}
+}
+
+// 空心按钮
+.mixin_btn-hollow {
+    display: inline-block;
+    color: @colorAct;
+    background-color: lighten(@colorAct, 50%);
+    border: 1px solid @colorAct;
+    padding: 1em 3em;
+    border-radius: 5px;
+    &:hover {}
+}
+
+// 个人中心 课程相关列表
+.mixin_course_dataTable() {
+    width: 100%;
+    border-collapse: collapse;
+    td,
+    th {
+        padding: 1em .5em;
+        vertical-align: middle;
+    }
+    thead {
+        th {
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #f6c68e;
+            background-color: #fffff1;
+            color: #eb9d5b;
+        }
+    }
+    tbody {
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            span {
+                font-size: 13px;
+            }
+            &:first-child {
+                width: 3.5%;
+            }
+            &.order-status {
+                width: 8%;
+                text-align: center;
+                span {
+                    display: inline-block;
+                    padding: .5em;
+                    border: 1px solid #ccc;
+                    background-color: #efefef;
+                }
+                .status-payment {
+                    &.active {
+                        border-color: @colorAct;
+                        background-color: lighten(@colorAct, 40%);
+                        color: @colorAct;
+                    }
+                }
+                .status-comment {
+                    margin-top: .5em;
+                    &.active {
+                        background-color: #e6faf6;
+                        border: 1px solid #a4d1ee;
+                        color: #2692d0;
+                    }
+                }
+            }
+            &.top-status {
+                width: 12%;
+                span {
+                    display: inline-block;
+                    text-align: center;
+                    padding: .5em 0;
+                    width: 5em;
+                    border: 1px solid #ccc;
+                    background-color: #efefef;
+                    &.active {
+                        color: #3a9bcd;
+                        border-color: #3a9bcd;
+                    }
+                }
+                div:first-child {
+                    margin-bottom: .5em;
+                }
+            }
+            &.course-title {
+                text-align: left;
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                &>img {
+                    width: 30%;
+                }
+                &>span {
+                    width: 68%;
+                    padding-left: 1em;
+                }
+            }
+            &.browsed-date {
+                width: 25%;
+            }
+            &.order-date {
+                width: 10%;
+            }
+            &.order-price {
+                width: 8%;
+            }
+            &.order-actions {
+                width: 13%;
+                div+div {
+                    margin-top: .5em;
+                }
+                button,
+                span {
+                    cursor: pointer;
+                    font-size: 13px;
+                    outline: 0;
+                    display: inline-block;
+                    padding: .55em 1.5em;
+                    color: white;
+                    border-radius: 5px;
+                }
+                .action-first,
+                .action-orange {
+                    background-color: @colorAct;
+                    &:hover {
+                        background-color: lighten( @colorAct, 10%);
+                    }
+                    &:active {
+                        background-color: darken( @colorAct, 10%);
+                    }
+                }
+                .action-blue,
+                .action-second {
+                    background-color: #3a9bcd;
+                    &:hover {
+                        background-color: lighten( #3a9bcd, 10%);
+                    }
+                    &:active {
+                        background-color: darken( #3a9bcd, 10%);
+                    }
+                }
+            }
+            &.pro-course-actions {
+                width: 35%;
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                div+div {
+                    margin-left: .5em;
+                }
+                span {
+                    display: inline-block;
+                    padding: .55em 1.5em;
+                    color: white;
+                    border-radius: 5px;
+                }
+                .action-orange {
+                    cursor: default;
+                    text-align: left;
+                    width: 12em;
+                    background-color: @colorAct;
+                }
+                .action-blue {
+                    background-color: #3a9bcd;
+                    &:hover {
+                        background-color: lighten( #3a9bcd, 10%);
+                    }
+                    &:active {
+                        background-color: darken( #3a9bcd, 10%);
+                    }
+                }
+            }
+            &.favi-delete {
+                span {
+                    color: #2692d0;
+                    &:hover {
+                        color: @colorAct;
+                    }
+                }
+            }
+            &.broadcast-actions {
+                width: 13%;
+                span {
+                    display: inline-block;
+                    padding: .6em 1.5em;
+                    color: white;
+                    border-radius: 5px;
+                    background-color: @colorAct;
+                    &:hover {
+                        background-color: lighten( @colorAct, 10%);
+                    }
+                    &:active {
+                        background-color: darken( @colorAct, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 企业，厂商中心数据列表
+.mixin_entp_dataTable() {
+    width: 100%;
+    border-collapse: collapse;
+    td,
+    th {
+        padding: 1em .5em;
+        vertical-align: middle;
+    }
+    thead {
+        th {
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid #ccc;
+            background-color: #75a0df;
+            color: #fff;
+        }
+    }
+    tbody {
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            span {
+                font-size: 13px;
+            }
+            &.entp-name {
+                width: 35%;
+            }
+            &.user-name {
+                width: 15%;
+            }
+        }
+    }
+}
+
+.mixin_share_to() {
+    position: relative;
+    &>* {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .bshare-custom {
+        margin-left: .3em;
+    }
+    .weixin {
+        margin-right: 0;
+        position: relative;
+        display: inline-block;
+        overflow: visible;
+        width: 19px;
+        height: 16px;
+        &:hover {
+            opacity: .8;
+            .weixin-ewm {
+                display: block!important;
+            }
+        }
+        .weixin-icon {}
+        .weixin-ewm {
+            display: none!important;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 50px;
+            width: 180px;
+            height: 180px;
+        }
+    }
+}

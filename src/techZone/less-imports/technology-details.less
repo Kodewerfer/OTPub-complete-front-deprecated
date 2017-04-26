@@ -1,0 +1,188 @@
+&.technology-details {
+    .banner {
+        width: 100%;
+        height: 140px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .advert {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+    .main-body {
+        padding-top: 55px;
+    }
+    .left {
+        padding-bottom: 30px;
+        .main {
+            border: 1px solid #cdcdcd;
+            .main-head {
+                padding: 18px 0;
+                padding-left: 18px;
+                border-bottom: 1px solid #cdcdcd;
+                font-size: 13px;
+                a:hover {
+                    color: @colorAct;
+                }
+            }
+            .main-content {
+                padding: 50px;
+                h1 {
+                    text-align: center;
+                }
+                p {
+                    line-height: 25px;
+                    text-indent: 26px;
+                }
+                .key {
+                    position: relative;
+                    margin-top: 20px;
+                    .key-words {
+                        color: @colorAct;
+                        font-weight: bold;
+                        display: inline-block;
+                        text-indent: 0;
+                    }
+                    .bshare-to {
+                        width: 160px;
+                        height: 15px;
+                        display: inline-block;
+                        float: right;
+                        .weixin-icon {
+                            display: inline-block;
+                            width: 15px;
+                            height: 15px;
+                            margin-top: 2px!important;
+                        }
+                        .weixin-ewm {
+                            width: 180px;
+                            margin-bottom: 15px!important;
+                            margin-left: -60px!important;
+                        }
+                    }
+                }
+                .explain {
+                    border: 1px dashed #a0a0a0;
+                    padding: 18px;
+                    margin-top: 30px;
+                }
+                .connect {
+                    margin-top: 50px;
+                    text-indent: 0;
+                    font-size: 13px;
+                    .prev {
+                        &:hover {
+                            color: @colorAct;
+                        }
+                    }
+                    .next {
+                        float: right;
+                        &:hover {
+                            color: @colorAct;
+                        }
+                    }
+                }
+                .author {
+                    text-align: center;
+                    line-height: 60px!important;
+                }
+                img {
+                    display: block;
+                    margin: auto;
+                    width: 90%;
+                    max-width: 600px;
+                    margin-top: 35px;
+                    margin-bottom: 35px;
+                }
+            }
+        }
+        .recommanded {
+            margin-top: 5em;
+            margin-bottom: 6em;
+            // extending the sorting-paing thingy above.
+            .recommanded-head {
+                font-size: 14px;
+                margin-top: .75em;
+                background-color: #f1f1f1;
+                border: 1px solid #ddd;
+                border-width: 1px 0;
+                cursor: pointer;
+                span {
+                    .mixin_tabs();
+                }
+            }
+            .blockies {
+                .mixin_recom-blocks();
+            }
+        }
+    }
+    .right {
+        .right-head {
+            border: 1px solid #dddddd;
+            border-width: 1px 0;
+            background: #f1f1f1;
+            span {
+                .mixin_tabs();
+            }
+        }
+        .right-top {
+            border: 1px solid #cdcdcd;
+            border-top: none;
+            padding: 10px 20px 20px;
+            ul {
+                li {
+                    line-height: 1.1em;
+                    font-size: 13px;
+                    padding: 18px 2px;
+                    border-bottom: 1px dashed #bdbdbd;
+                    &:hover {
+                        color: @colorAct;
+                    }
+                }
+            }
+        }
+        // right parts.
+        .tops-list {
+            margin-top: 45px;
+            .list-head {
+                .right-head()
+            }
+            .list-contents {
+                border: 1px solid #ccc;
+                border-top: 0;
+                padding: 1em 1.5em;
+                padding-bottom: 0;
+                // padding-top: 0;
+                .items {
+                    margin-bottom: 1em;
+                    .clearfix();
+                    .img-holder {
+                        float: left;
+                        width: 48%;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .img-holder+div {
+                        float: right;
+                        width: 52%;
+                        padding: .25em 1em;
+                        p+p {
+                            margin-top: .5em;
+                            color: #a9a7a7;
+                        }
+                    }
+                    &:hover {
+                        .img-holder+div {
+                            p:first-child {
+                                color: @colorAct;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

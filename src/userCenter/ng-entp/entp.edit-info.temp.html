@@ -1,0 +1,78 @@
+<div class="edit-info">
+    <div class="view-head">
+        <div>
+            <h2>修改资料</h2>
+        </div>
+    </div>
+    <div class="view-body ">
+
+        <div class="row">
+
+            <div class="entp-infos l-col-12">
+
+                <div class="info-row">
+                    <span>公司名称:</span>
+                    <span>{{$ctrl.userInfo.username}}</span>
+                </div>
+
+                <div class="info-row">
+                    <span>联系姓名:</span>
+                    <input type="text" ng-model="$ctrl.userInfo.user">
+                </div>
+
+                <div class="info-row">
+                    <span>联系电话:</span>
+                    <input type="text" ng-model="$ctrl.userInfo.mobile">
+                </div>
+
+                <div class="info-row">
+                    <span>密码:</span>
+                    <span>******</span>
+                    <a href="" ng-click="$ctrl.isEditingPass = true"><i class="fa fa-edit"></i>修改密码</a>
+                </div>
+
+                <div class="button-row">
+                    <a href="" class="btn-confirm" ng-click="$ctrl.sendChanges()"><span>保存</span></a>
+                </div>
+
+            </div>
+
+            <!--<div class="user-protrait l-col-4">
+                <div class="img-holder">
+                    <img ng-src="{{$ctrl.userInfo.avatar}}" alt="">
+                    <div style="width:{{$ctrl.uploadProgress}}%" class="upload-prgress"></div>
+                </div>
+                <button type="file" ngf-select="$ctrl.uploadAvatar($file, $invalidFiles)" ngf-max-size="500KB">修改头像</button>
+            </div>-->
+
+        </div>
+
+        <!-- after complete pop out -->
+        <div class="popout" ng-show="$ctrl.replyMsg">
+            <div class="pop-mask" ng-click="$ctrl.replyMsg = false"></div>
+            <div class="pop-inner">
+                <p>{{$ctrl.replyMsg}}</p>
+            </div>
+        </div>
+
+        <!-- edit password pop out -->
+        <div class="popout" ng-show="$ctrl.isEditingPass">
+            <div class="pop-mask" ng-click="$ctrl.isEditingPass = false"></div>
+            <div class="pop-inner">
+                <div class="form-row">
+                    <span>新密码:</span>
+                    <input type="password" ng-model="$ctrl.newPassword.pass">
+                </div>
+                <div class="form-row">
+                    <span>确认新密码:</span>
+                    <input type="password" ng-model="$ctrl.newPassword.repass">
+                </div>
+                <!--notifaction message-->
+                <p class="pop-notice" ng-show="$ctrl.editPassMsg">{{$ctrl.editPassMsg}}</p>
+                <a class="btn-confirm" ng-click="$ctrl.onChangePass()">确认</a>
+                <a class="btn-cancel" ng-click="$ctrl.onCancelChangePass()">取消</a>
+            </div>
+        </div>
+
+    </div>
+</div>

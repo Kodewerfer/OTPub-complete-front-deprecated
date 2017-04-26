@@ -1,0 +1,33 @@
+<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="5" min-scrollbar-length="20">
+
+  <!---->
+  <div class="items-section">
+
+    <div class="item" ng-repeat="qItem in $ctrl.questionDatas" ng-class="{marked:qItem.user_type}">
+      <p>{{qItem.question}}</p>
+      <div class="item-action">
+        <span>提问于：{{qItem.play_time}}</span>
+        <div class="icons">
+          <span class="alert-text" ng-show="qItem.confirmingDel">
+            确认删除？
+          </span>
+          <!--check mark-->
+          <a href="" ng-show="qItem.confirmingDel" ng-click="$ctrl.onDelete({$event:{id:qItem.id}})">
+            <i class="fa fa-check"></i>
+          </a>
+          <!--close mark-->
+          <a href="" ng-show="qItem.confirmingDel" ng-click="qItem.confirmingDel=false">
+            <i class="fa fa-close"></i>
+          </a>
+          <!--delete-->
+          <a href="" ng-hide="qItem.confirmingDel" ng-if="qItem.user_type" ng-click="qItem.confirmingDel=true">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </div>
+      </div>
+      <p class="answer">{{qItem.answer}}</p>
+    </div>
+
+  </div>
+
+</perfect-scrollbar>

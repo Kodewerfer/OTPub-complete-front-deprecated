@@ -1,0 +1,14 @@
+{
+    "status": "success",
+    "msg": "获取信息成功",
+    "data": {
+        "userid": "1",
+        "username": "zhangpeng",
+        "mobile": "",
+        "realname": "zhangpeng",
+        "company": "元鼎",
+        "branch": "php",
+        "avatar": "../../../images/userCenter/portrait-demo.png",
+        "cart": "1111111"
+    }
+}

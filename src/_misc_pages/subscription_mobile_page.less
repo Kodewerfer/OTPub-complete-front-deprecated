@@ -1,0 +1,42 @@
+  @import '../less-components/bias/config.less';
+  @import '../less-components/mic.less';
+  body {
+    background-color: cadetblue;
+    .notice {
+      margin-top: 2em;
+      color: white;
+      text-align: center;
+      font-size: 20px;
+    }
+    form {
+      text-align: center;
+    }
+    .form-row {
+      margin-top: 3em;
+      margin-bottom: 1em;
+      p {
+        color: white;
+      }
+      span {
+        width: 40%;
+        color: white;
+        font-weight: 600;
+        padding-right: .5em;
+      }
+      input {
+        padding: .5em;
+      }
+    }
+    .button-row {
+      button {
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: @colorAct;
+        padding: .5em 1em;
+        color: white;
+        border: none;
+        outline: 0;
+        .mixin_oButton();
+      }
+    }
+  }

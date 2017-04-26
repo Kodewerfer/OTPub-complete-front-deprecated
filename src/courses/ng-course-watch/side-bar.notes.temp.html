@@ -1,0 +1,35 @@
+<perfect-scrollbar class="scroller" wheel-propagation="true" wheel-speed="5" min-scrollbar-length="20">
+  <!---->
+
+  <div class="items-section">
+    <div class="item" ng-repeat="noteItem in $ctrl.noteDatas">
+      <p>{{noteItem.note}}</p>
+      <div class="item-action">
+        <span>记录于：{{noteItem.play_time}}</span>
+
+        <div class="icons">
+          <span class="alert-text" ng-show="noteItem.confirmingDel">
+            确认删除？
+          </span>
+          <!--check mark-->
+          <a href="" ng-show="noteItem.confirmingDel" ng-click="$ctrl.onDelete({$event:{id:noteItem.id}})">
+            <i class="fa fa-check"></i>
+          </a>
+          <!--close mark-->
+          <a href="" ng-show="noteItem.confirmingDel" ng-click="noteItem.confirmingDel=false">
+            <i class="fa fa-close"></i>
+          </a>
+          <!--delete-->
+          <a href="" ng-hide="noteItem.confirmingDel" ng-click="noteItem.confirmingDel=true">
+            <i class="fa fa-trash-o"></i>
+          </a>
+          <!--edit-->
+          <a href="" ng-hide="noteItem.confirmingDel" ng-click="$ctrl.onEdit({$event:{target:noteItem}})">
+            <i class="fa fa-edit"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</perfect-scrollbar>

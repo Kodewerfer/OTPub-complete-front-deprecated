@@ -1,0 +1,32 @@
+<div class="messages" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>站内信</h2>
+        </div>
+        <!--top filter-->
+        <div class="msg-read-return">
+            <a href="" ui-sref="personal.messages">
+                <span>返回</span>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <no-data ng-show="$ctrl.showNoData" alert-msg="无内容"></no-data>
+
+        <div class="read-message">
+            <h2>{{$ctrl.theMsg.subject}}</h2>
+            <h3>{{$ctrl.theMsg.create_time}}</h3>
+            <div class="msg-content" ng-bind-html="$ctrl.theMsg.content | trustHtml">
+            </div>
+        </div>
+
+    </div>
+
+</div>

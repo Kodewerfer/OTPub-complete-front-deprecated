@@ -1,0 +1,30 @@
+{
+  "name": "otpub",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "vinyl-named": "*",
+    "webpack-stream": "*",
+    "css-loader": "*",
+    "html-loader": "*",
+    "style-loader": "*",
+    "file-loader": "*",
+    "url-loader": "*",
+    "gulp": "*",
+    "gulp-rename": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-changed": "*",
+    "gulp-clean-css": "*",
+    "gulp-connect": "*",
+    "babel-plugin-transform-react-jsx": "*",
+    "gulp-less": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

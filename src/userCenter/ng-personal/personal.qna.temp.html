@@ -1,0 +1,55 @@
+<div class="my-questions" ng-cloak>
+
+    <div class="view-head">
+
+        <div>
+            <h2>我的问答</h2>
+        </div>
+        <!--top filter-->
+        <div class="filter-section" ng-show="$ctrl.dataListMeta.length">
+            <a href="" ng-click="$ctrl.setListFilter('',0)"> <span ng-class="{active:$ctrl.currentFilterType === 0}">全部</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({answer_status:0},1)"><span ng-class="{active:$ctrl.currentFilterType === 1}"> 未回答</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({answer_status:1},2)"><span ng-class="{active:$ctrl.currentFilterType === 2}">已回答</span></a>
+        </div>
+
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <no-data ng-show="$ctrl.showNoData" alert-msg="暂无问答"></no-data>
+
+        <div class="question-list">
+
+            <div class="question-item" ng-repeat="dataItem in $ctrl.dataListPaged">
+                <div class="head">
+                    <ng-switch on="dataItem.answer_status">
+                        <span class="orange" ng-switch-when="0">未回答</span>
+                        <span class="green" ng-switch-when="1">已回答</span>
+                    </ng-switch>
+                    <a ng-href="/Course/Player/play/courseid/{{dataItem.course_id}}.html">
+                        <h4>{{dataItem.course_name}}</h4>
+                    </a>
+                    <span class="time-stamp"><i class="fa fa-play-circle-o"></i>{{dataItem.play_time}}</span>
+                </div>
+                <div class="body">
+                    <p><b class="orange">问题：</b>{{dataItem.question}}</p>
+                    <p ng-if="dataItem.answer_status"><b class="blue">回答：</b>{{dataItem.answer}}</p>
+                </div>
+                <div class="bottom">
+                    <span class="create-time">{{dataItem.add_time}}</span>
+                    <span class="lesson-name">{{dataItem.lesson_name}}</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!--paging-->
+        <pagination target-data="$ctrl.dataList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

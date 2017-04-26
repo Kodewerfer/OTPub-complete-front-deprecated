@@ -1,0 +1,31 @@
+<div class="top-bar">
+    <div class="infos">
+        <div class="img-holder">
+            <img ng-src="{{$ctrl.userInfo.avatar}}" alt="">
+        </div>
+        <div class="text-holder">
+            <h3>{{$ctrl.userInfo.username}}</h3>
+
+            <div class="bundle-info" ng-hide="$ctrl.userInfo.cart">
+                <p>没有卡包 <a href="">?</a> </p>
+                <a href="/User/Cart/cartpack.html" class="btn-purches"> 点击购买</a>
+            </div>
+
+            <div class="bundle-info" ng-show="$ctrl.userInfo.cart">
+                <p>{{$ctrl.userInfo.cart}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="funcs">
+
+        <div>
+            <a ui-sref="personal.messages" ui-sref-active="active">
+                <i class="fa fa-envelope-o"></i><span>站内信</span>
+            </a>
+            <a ui-sref="personal.editInfo" ui-sref-active="active">
+                <i class="fa fa-edit"></i><span>修改资料</span>
+            </a>
+        </div>      
+
+    </div>
+</div>

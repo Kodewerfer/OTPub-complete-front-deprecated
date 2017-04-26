@@ -1,0 +1,94 @@
+<div class="subscription" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>卡包管理</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <div class="subscription-infos" ng-show="$ctrl.showInfoRows">
+
+            <div class="btn-row">
+                <a href="/Course/List/index.html" class="btn-courseCenter">课程中心</a>
+            </div>
+
+            <div class="subinfo-row">
+                <div class="sub-type">
+                    <img src="../../../images/userCenter/sub-week.jpg" alt="">
+                    <span>{{$ctrl.subInfos.week_time.status|subStatusTextFilter}}</span>
+                </div>
+                <div class="lasting-time">
+                    <span>{{$ctrl.subInfos.week_time.time}}</span>
+                </div>
+                <div class="sub-actions">
+                    <a>
+                        <span>活动获取</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="subinfo-row">
+                <div class="sub-type">
+                    <img src="../../../images/userCenter/sub-moth.jpg" alt="">
+                    <span>{{$ctrl.subInfos.month_time.status|subStatusTextFilter}}</span>
+                </div>
+                <div class="lasting-time">
+                    <span>{{$ctrl.subInfos.month_time.time}}</span>
+                </div>
+                <div class="sub-actions">
+                    <a ng-href="/User/Cart/cartorder/id/{{$ctrl.subInfos.month_time.id}}.html">
+                        <span>{{$ctrl.subInfos.month_time.status|subStatusActionFilter}}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="subinfo-row">
+                <div class="sub-type">
+                    <img src="../../../images/userCenter/sub-quater.jpg" alt="">
+                    <span>{{$ctrl.subInfos.season_time.status|subStatusTextFilter}}</span>
+                </div>
+                <div class="lasting-time">
+                    <span>{{$ctrl.subInfos.season_time.time}}</span>
+                </div>
+                <div class="sub-actions">
+                    <a ng-href="/User/Cart/cartorder/id/{{$ctrl.subInfos.season_time.id}}.html">
+                        <span>{{$ctrl.subInfos.season_time.status|subStatusActionFilter}}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="subinfo-row">
+                <div class="sub-type">
+                    <img src="../../../images/userCenter/sub-year.jpg" alt="">
+                    <span>{{$ctrl.subInfos.year_time.status|subStatusTextFilter}}</span>
+                </div>
+                <div class="lasting-time">
+                    <span>{{$ctrl.subInfos.year_time.time}} </span>
+                </div>
+                <div class="sub-actions">
+                    <a ng-href="/User/Cart/cartorder/id/{{$ctrl.subInfos.year_time.id}}.html">
+                        <span>{{$ctrl.subInfos.year_time.status|subStatusActionFilter}}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="btn-row">
+                <a href="/Course/List/index.html" class="btn-courseCenter">课程中心</a>
+            </div>
+
+        </div>
+
+        <div class="sub-desc" ng-show="$ctrl.showInfoRows">
+            <h3>卡包说明：</h3>
+            <p>学习卡分月卡、季卡、半年卡三种规格，月卡有效期为30天，季卡有效期为90天，半年卡有效期为180天。在有效期内，即可观看技术专区内免费、收费、有效期内新上线课程（不含带有精品字样的课程）。购买后自动计算时间。
+            </p>
+        </div>
+    </div>
+
+</div>

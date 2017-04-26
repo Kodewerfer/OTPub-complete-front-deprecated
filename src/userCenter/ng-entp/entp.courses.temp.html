@@ -1,0 +1,77 @@
+<div class="entp-courses" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>我的课程</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <div class="download-link">
+            <a href="/Data/company_user.xlsx"><i class="fa fa-download"></i><span>下载导入模板</span></a>
+        </div>
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data-course alert-msg="您还未购买任何课程" ng-show="$ctrl.showNoData"></no-data-course>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.showDataTable">
+            <thead>
+                <th colspan="2">课程名称</th>
+                <th>开通时间</th>
+                <th>有效期</th>
+                <th>课程总数</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="courseItem in $ctrl.theListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="course-title">
+                        <img ng-src="{{courseItem.bg_thumb_img}}" alt=""> <span>{{courseItem.course_name}}</span>
+                    </td>
+                    <td>
+                        <span>{{courseItem.start_time}}</span>
+                    </td>
+                    <td class="valid-time">
+                        <span>{{courseItem.input_time}}</span>至
+                        <span>{{courseItem.end_time}}</span>
+                    </td>
+                    <td>
+                        <span>{{courseItem.times}}</span>
+                    </td>
+                    <td class="order-actions">
+                        <div>
+                            <button type="file" ngf-select="$ctrl.uploadFile($file, $invalidFiles,courseItem)" ngf-max-size="10MB" class="action-second">{{courseItem.import_status|importStatusFilter}}</button>
+                            <!--<button ng-click="$ctrl.uploadFile(courseItem)" class="action-second">{{courseItem.import_status|importStatusFilter}}</button>-->
+                        </div>
+                        <div>
+                            <!-- passing the query param -->
+                            <a ui-sref="entp.courses.details({courseId:courseItem.course_id})" href=""><span class="action-first">查看详情</span></a>
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+    <!-- after upload dialog -->
+    <div class="popout" ng-show="$ctrl.uploadMsg">
+        <div class="pop-mask" ng-click="$ctrl.uploadMsg = false"></div>
+        <div class="pop-inner editPhoneNum">
+            <p class="hot-line">导入结果</p>
+            <p>{{$ctrl.uploadMsg}}</p>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "otpub",
+  "description": "",
+  "main": "",
+  "authors": [
+    "LIJIALIN"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "#latest",
+    "jquery": "1",
+    "sticky-kit": "#latest",
+    "normalize-css": "normalize.css#^5.0.0",
+    "artDialog": "#latest",
+    "video.js": "videojs#^5.13.2",
+    "slick-carousel": "^1.6.0",
+    "perfect-scrollbar": "#latest",
+    "angular": "#latest",
+    "ng-file-upload": "#latest",
+    "ng-file-upload-shim": "#latest",
+    "angular-perfect-scrollbar": "#latest",
+    "angular-animate": "1.5.x",
+    "angular-ui-router": "1",
+    "videojs-sublime-skin": "#latest",
+    "angular-post-fix": "#latest",
+    "ocLazyLoad": "#latest"
+  }
+}

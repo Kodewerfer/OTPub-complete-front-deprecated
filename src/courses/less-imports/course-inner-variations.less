@@ -1,0 +1,313 @@
+    // 详情
+    .course-details {
+        color: #999999;
+        img {
+            width: 100%;
+        }
+        &>div {
+            margin-bottom: 2em;
+            h3 {
+                color: @colorAct;
+                margin-bottom: .8em;
+                font-weight: 500;
+            }
+        }
+        .central-row {
+            padding-top: 3.5em;
+            padding-bottom: 3.5em;
+            border: 1px solid #ccc;
+            border-width: 1px 0;
+            white-space: nowrap;
+            .clearfix();
+            &>div {
+                float: left;
+                padding-left: 4em;
+                width: 49%;
+                white-space: normal;
+            }
+            &>div:first-child {
+                border-right: 1px solid #ccc;
+                padding-right: 4em;
+                padding-left: 0;
+            }
+        }
+        .central-row+div {
+            p {
+                padding-left: 2em;
+            }
+        }
+        .top-adds {
+            margin-bottom: 3em;
+            img {
+                width: 100%;
+            }
+        }
+        .download-row {
+            margin-top: 4em;
+            .download-blockies {
+                color: black;
+                padding: 1em;
+                border: 1px solid #ccc;
+                margin-bottom: 2em;
+                position: relative;
+                a {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                }
+                i {
+                    margin-right: .5em;
+                    float: right;
+                    color: @colorAct;
+                }
+                &:hover {
+                    background-color: @colorAct;
+                    color: white;
+                    border-color: @colorAct;
+                    .fa {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    
+    // 大纲
+    .course-overview {
+        h4 {
+            margin-bottom: .5em;
+            margin-top: 1.5em;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+        .chapter {
+            padding: .35em 0;
+            &>* {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .lefty {
+                color: #999;
+                width: 35%;
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .chapter-num {
+                    width: 25%;
+                }
+                .chapter-name {
+                    width: 73%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .righty {
+                width: 63%;
+                position: relative;
+                padding-top: .25em;
+                .clearfix();
+                &>* {
+                    vertical-align: middle;
+                }
+                hr {
+                    display: inline-block;
+                    width: 88%;
+                    border: 0;
+                    height: 4px;
+                    background-image: linear-gradient(to right, black 13%, rgba(153, 153, 153, 0) 0%);
+                    background-position: bottom;
+                    background-size: 5px 1px;
+                    background-repeat: repeat-x;
+                }
+                a.btn-courseWatch {
+                    display: inline-block;
+                    font-size: 14px;
+                    padding: 8px 12px;
+                    border-radius: 5px;
+                    color: white;
+                    background-color: @colorAct;
+                    &.courseFree {
+                        background-color: #1278cf;
+                    }
+                }
+            }
+        }
+    }
+    
+    // 评价
+    .course-comment {
+        .comments-filter {
+            border: 1px solid #ccc;
+            padding: .35em 0;
+            background-color: #f7f6f6;
+            td {
+                padding: 2em;
+                &:first-child {
+                    padding: 2em 4em;
+                    border-right: 1px solid #ccc;
+                    p:first-child {
+                        color: @colorAct;
+                        font-weight: 600;
+                    }
+                }
+                button {
+                    cursor: pointer;
+                    outline: 0;
+                    color: #666;
+                    vertical-align: middle;
+                    font-size: 14px;
+                    background-color: transparent;
+                }
+            }
+        }
+        .comment-item {
+            margin-top: 4em;
+            padding-bottom: 1.5em;
+            padding-left: .35em;
+            border-bottom: 1px solid #ccc;
+            &>* {
+                display: inline-block;
+                vertical-align: top;
+            }
+            .protrait-holder {
+                p {
+                    margin-top: .5em;
+                    text-align: center;
+                }
+                width: 10%;
+                img {
+                    width: 100%;
+                }
+            }
+            .text-holder {
+                width: 89%;
+                padding-left: 2em;
+                i {
+                    margin-right: .25em;
+                    margin-bottom: .5em;
+                    color: #edb200;
+                    font-size: 1.25em;
+                }
+                div.comment {
+                    margin-bottom: 1em;
+                }
+                p.date {
+                    color: #b0b0b0;
+                }
+            }
+        }
+        #commentPager {
+            text-align: center;
+            .pagination {
+                .page.active {
+                    background-color: @colorAct;
+                }
+            }
+        }
+    }
+    
+    // 问答
+    .course-qanda {
+        .question-bar {
+            margin-bottom: 3em;
+            white-space: nowrap;
+            .clearfix();
+            .lefty {
+                float: left;
+                width: 74%;
+                padding-right: 3em;
+                .clearfix();
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                img {
+                    border: 1px solid #ccc;
+                    width: 9%;
+                }
+                img+div {
+                    white-space: normal;
+                    padding: 1.5em 2.5em;
+                    margin-left: 2em;
+                    width: 90%;
+                    background-color: @colorAct;
+                    h3 {
+                        font-weight: 500;
+                        color: white;
+                    }
+                }
+            }
+            .righty {
+                padding-top: 1em;
+                float: right;
+                width: 25%;
+                opacity: .5;
+                .clearfix();
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .question-infos {
+                    text-align: right;
+                }
+                .bg-holder {
+                    margin-left: 2em;
+                    background-color: @colorAct;
+                    color: white;
+                    padding: 8px;
+                    border-radius: 5px;
+                    @media (max-width: 1100px) {
+                        margin-left: 1em;
+                    }
+                    span {
+                        font-weight: 600;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+        .answer-bar {
+            padding-bottom: 3em;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 3em;
+            &>* {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            .bg-holder {
+                opacity: .5;
+                margin-right: 2em;
+                margin-bottom: 1em;
+                background-color: @colorAct;
+                color: white;
+                padding: 8px;
+                border-radius: 5px;
+                span {
+                    font-weight: 600;
+                    font-size: 35px;
+                }
+                @media (max-width:1100px) {
+                    margin-right: 1em;
+                }
+            }
+            .text-holder {
+                width: 90%;
+                border: 1px solid #ccc;
+                padding: 2em 3.5em;
+                padding-bottom: 1em;
+                p {
+                    text-indent: 2em;
+                }
+                p.date {
+                    margin-top: 1em;
+                    text-align: right;
+                    color: #ccc;
+                }
+            }
+        }
+    }

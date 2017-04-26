@@ -1,0 +1,9 @@
+<div class="bottom-paging" ng-hide="$ctrl.pager.totalPages === 1||!$ctrl.pager.totalPages">
+    <div>
+        <span ng-class="{disabled:$ctrl.pager.currentPage-1 === 0}"><a href="" ng-click="$ctrl.setPage($ctrl.pager.currentPage-1)"></a>上一页</span>
+        <span ng-repeat="pageNum in $ctrl.pager.pages" ng-class="{active:$ctrl.pager.currentPage===pageNum}">
+            <a href="" ng-click="$ctrl.setPage(pageNum)"></a>{{pageNum}}
+        </span>
+        <span ng-class="{disabled:$ctrl.pager.currentPage+1>$ctrl.pager.totalPages}"><a href="" ng-click="$ctrl.setPage($ctrl.pager.currentPage+1)"></a>下一页</span>
+    </div>
+</div>

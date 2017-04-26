@@ -1,0 +1,62 @@
+<div class="side-wrapper">
+
+  <!--header-->
+  <div class="head-tabs">
+    <a href="" ng-click="$ctrl.currentTab = '笔记'">
+      <span ng-class="{active:$ctrl.currentTab === '笔记'}">笔记</span>
+    </a>
+    <a href="" ng-click="$ctrl.currentTab = '问题'">
+      <span ng-class="{active:$ctrl.currentTab === '问题'}">问答</span>
+    </a>
+  </div>
+
+  <!--add button-->
+  <div class="action-section">
+    <a href="" ng-click="$ctrl.addingItem.open()">
+      <div>
+        <i class="fa fa-plus"></i>
+        <span>新增{{$ctrl.currentTab}}</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- course note -->
+  <side-bar-notes ng-show="$ctrl.currentTab === '笔记'" note-datas="$ctrl.nData" on-edit="$ctrl.editingNote.open($event.target)"
+    on-delete="$ctrl.deletingNote($event.id)"></side-bar-notes>
+
+    <!-- course question and answers-->
+    <side-bar-qna ng-show="$ctrl.currentTab === '问题'" question-datas="$ctrl.qData" on-delete="$ctrl.deleteQuestion($event.id)"></side-bar-qna>
+
+    <!--Add ANEW-->
+    <div class="add-comment" ng-show="$ctrl.addingItem.isOpen">
+      <div class="add-comment-mask" ng-click="$ctrl.addingItem.close()"></div>
+      <div class="add-comment-inner">
+        <h3>添加{{$ctrl.currentTab}} <i class="fa fa-close" ng-click="$ctrl.addingItem.close()"></i></h3>
+        <div class="comment-content">
+          <p class="error-msg" ng-show="$ctrl.addingItem.errorMsg">添加{{$ctrl.currentTab}}失败，{{$ctrl.addingItem.errorMsg}}</p>
+          <textarea ng-hide="$ctrl.addingItem.isSucceed" rows="5" cols="" ng-model="$ctrl.addingItem.content" ng-hide="$ctrl.addingItem.isSucceed"></textarea>
+          <p class="comment-complete" ng-show="$ctrl.addingItem.isSucceed">
+            添加{{$ctrl.currentTab}}成功！
+          </p>
+          <a href="" class="btn-add-comment" ng-click="$ctrl.addingItem.submit()" ng-hide="$ctrl.addingItem.isSucceed">添加{{$ctrl.currentTab}}</a>
+        </div>
+      </div>
+    </div>
+
+    <!--EDIT NOTE-->
+    <div class="add-comment" ng-show="$ctrl.editingNote.isOpen">
+      <div class="add-comment-mask" ng-click="$ctrl.editingNote.close()"></div>
+      <div class="add-comment-inner">
+        <h3>编辑{{$ctrl.currentTab}} <i class="fa fa-close" ng-click="$ctrl.editingNote.close()"></i></h3>
+        <div class="comment-content">
+          <p class="error-msg" ng-show="$ctrl.editingNote.errorMsg">编辑{{$ctrl.currentTab}}失败，{{$ctrl.editingNote.errorMsg}}</p>
+          <textarea ng-hide="$ctrl.editingNote.isSucceed" rows="5" cols="" ng-model="$ctrl.editingNote.content" ng-hide="$ctrl.editingNote.isSucceed"></textarea>
+          <p class="comment-complete" ng-show="$ctrl.editingNote.isSucceed">
+            编辑{{$ctrl.currentTab}}成功！
+          </p>
+          <a href="" class="btn-add-comment" ng-click="$ctrl.editingNote.submit()" ng-hide="$ctrl.editingNote.isSucceed">确认</a>
+        </div>
+      </div>
+    </div>
+
+</div>

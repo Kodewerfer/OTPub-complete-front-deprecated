@@ -1,0 +1,45 @@
+<div class="messages" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>站内信</h2>
+        </div>
+        <!--top filter-->
+        <div class="filter-section" ng-show="$ctrl.msgListMeta.length">
+            <a href="" ng-click="$ctrl.setListFilter('',0)"> <span ng-class="{active:$ctrl.currentFilterType === 0}">全部</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({status:1},1)"><span ng-class="{active:$ctrl.currentFilterType === 1}">已读</span></a>
+            <a href="" ng-click="$ctrl.setListFilter({status:0},2)"><span ng-class="{active:$ctrl.currentFilterType === 2}"> 未读</span></a>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <no-data ng-show="$ctrl.showNoData" alert-msg="暂无站内信"></no-data>
+
+        <div class="message-list">
+
+            <div class="message-item" ng-repeat="msgItem in $ctrl.msgListPaged">
+                <a href="" ui-sref="personal.read({msgID:msgItem.id})"></a>
+                <div class="msg-head">
+                    <ng-switch on="msgItem.status">
+                        <i ng-switch-when="1" class="fa fa-envelope-open-o"></i>
+                        <i ng-switch-when="0" class="fa fa-envelope"></i>
+                    </ng-switch>
+                    <h4>{{msgItem.subject}}</h4>
+                    <h4>{{msgItem.create_time}}</h4>
+                </div>
+                <div class="msg-body">
+                    <p>{{msgItem.intro}}</p>
+                </div>
+            </div>
+
+        </div>
+        <pagination target-data="$ctrl.msgList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>

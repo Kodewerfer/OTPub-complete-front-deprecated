@@ -1,0 +1,242 @@
+.modal-open {
+	overflow: hidden
+}
+
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1025;
+	-webkit-overflow-scrolling: touch;
+	outline: 0
+}
+
+.modal.fade .modal-dialog {
+	 
+	-webkit-transform: translate(0, -25%);
+	transform: translate(0, -25%);
+	-webkit-transition: -webkit-transform .3s ease-out;
+	transition: -webkit-transform .3s ease-out;
+	transition: transform .3s ease-out;
+	transition: transform .3s ease-out, -webkit-transform .3s ease-out
+}
+
+.modal.in .modal-dialog {
+	-webkit-transform: translate(0, 0);
+	transform: translate(0, 0)
+}
+
+.modal-open .modal {
+	overflow-x: hidden;
+	overflow-y: auto
+}
+
+.modal-dialog {
+	width: 80%;
+  	max-width: 860px;
+	position: relative;
+	width: auto;
+	margin: 10px
+}
+
+.modal-content {
+	/*background: url("../images/tk4_03.png") center center no-repeat;*/
+	position: relative;
+	background-color: #fff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+	background-clip: padding-box;
+	outline: 0;
+}
+.modal-dialog .modal-content .close {
+  color: #666;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1025;
+  background: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+.modal-dialog .modal-content .close span{
+	font-size: 25px;
+}
+.modal-dialog .modal-body { 
+  /*height: 618px;*/
+  padding-bottom: 70px;
+  text-align: center;
+  position: relative;
+
+}
+.modal-dialog .modal-body .form-row {
+  /*margin: .75em 0;*/
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 50px;
+}
+.modal-dialog .modal-body .form-row label {
+  display: inline-block;
+  width: 25%;
+  text-align: right;
+  padding-right: 2em;
+}
+.modal-dialog .modal-body .form-row label span{
+	color: red;
+	padding-right: 5px;
+}
+.modal-dialog .modal-body .form-row input {
+  width: 70%;
+  max-width: 20em;
+  padding: .5em;
+  border: .5px solid #ccc;
+  font-family: "微软雅黑";
+}
+.modal-dialog .modal-body .button-row {
+  margin-top: 3em;
+}
+.modal-dialog .modal-body .button-row .btn-positive {
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  margin-top: 3em;
+  display: inline-block;
+  margin: auto;
+  width: auto;
+  padding: 1em;
+}
+
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1024;
+	background-color: #000
+}
+
+.modal-backdrop.fade {
+	opacity: 0;
+	filter: alpha(opacity=0)
+}
+
+.modal-backdrop.in {
+	opacity: .5;
+	filter: alpha(opacity=50)
+}
+
+.modal-header {
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+	min-height: 16.43px
+}
+
+.modal-header .close {
+	margin-top: -2px
+}
+
+.modal-title {
+	margin: 0;
+	line-height: 1.42857143
+}
+
+
+.modal-footer {
+	padding: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5
+}
+
+.modal-footer .btn+.btn {
+	margin-left: 5px;
+	margin-bottom: 0
+}
+
+.modal-footer .btn-group .btn+.btn {
+	margin-left: -1px
+}
+
+.modal-footer .btn-block+.btn-block {
+	margin-left: 0
+}
+.tk_title{
+	
+	width: 100%;
+	background: #f4f4f4;
+	font-size: 28px;
+	color: #ed6d00;
+	height: 80px;
+	border-radius:8px 8px 0 0;
+	line-height: 80px;
+}
+
+.submit{
+	width: 220px;
+	height: 50px;
+	color: white;
+	font-size: 22px;
+	text-align: center;
+	line-height: 50px;
+	background: #ed6d00;
+	box-shadow: 0 0 15px #ed6d00; 
+	margin-top: 30px;
+	border-radius: 28px;
+	cursor: pointer;
+	outline: none;
+	font-family: "微软雅黑";
+}
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll
+}
+
+@media (min-width:768px) {
+	.modal-dialog {
+		width: 680px;
+		margin: 30px auto
+	}
+	.modal-content {
+		box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+	}
+	.modal-sm {
+		width: 300px
+	}
+}
+
+@media (min-width:992px) {
+	.modal-lg {
+		width: 900px
+	}
+}
+
+.clearfix:after,
+.clearfix:before,
+.modal-footer:after,
+.modal-footer:before {
+	content: " ";
+	display: table
+}
+
+.clearfix:after,
+.modal-footer:after {
+	clear: both
+}
+
+.center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}

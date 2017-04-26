@@ -1,0 +1,30 @@
+/**
+* This file contains critical variabes, NEED to be import in every "get togather" less files, and in the first import order.
+* 此文件为基础关键变量，尽量在汇总性less文件中，第一个引入。
+*/
+
+//the fail safe, poor man's nuke.
+@bodyMinWidth: 960px;
+// max-width for containers.
+@containerWidth: 1200px;
+// font size and what not.
+@baseFontSzie: 10px;
+@baseLineHeight: 1.1em;
+// page base color
+@generalBackGroundColor: #fff;
+// all the colors.
+@primordial: #29a7de;
+@secondaryColor: #f1f0f1;
+@occasional: "";
+@titleColor: darken(@primordial, 10%);
+// font colors
+@fontBaseColor: #616161;
+// other colors
+@colorAct: #ed6d00;
+// breakpoints
+@smallScreen: ~"only screen and (max-width: 61.875em)";
+@biggerScreen: ~"only screen and (min-width:61.9375em)";
+@containerBreakPoint: ~" (max-width:1435px)";
+@containerCollapsePoint: ~" (max-width:1350px)";
+// the point where navigation section of the top bar cannot shrink anymore, and will break the layout.
+@headerBreachPoint: ~" (max-width:1150px)";

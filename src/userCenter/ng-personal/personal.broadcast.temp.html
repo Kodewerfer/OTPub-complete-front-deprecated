@@ -1,0 +1,53 @@
+<div class="broadcast" ng-cloak>
+
+    <div class="view-head">
+        <div>
+            <h2>直播预约</h2>
+        </div>
+    </div>
+
+
+    <div class="view-body">
+
+        <!--when an ajax error occured.-->
+        <error-display error-details="$ctrl.ajaxErrorMesg" ng-show="$ctrl.showErrorWindow"></error-display>
+
+        <!--no orders founded-->
+        <no-data alert-msg="您还没预约过任何课程" ng-hide="$ctrl.theListPaged.length"></no-data>
+
+        <!--data display table-->
+        <table ng-show="$ctrl.theListPaged.length">
+            <thead>
+                <th colspan="2">课程名称</th>
+                <th>直播时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="broadcastItem in $ctrl.theListPaged">
+                    <td>{{$index+1}}</td>
+                    <td class="course-title">
+                        <img ng-src="{{broadcastItem.thumb}}" alt=""> <span>{{broadcastItem.title}}</span>
+                    </td>
+                    <td width="40%">
+                        <span>{{broadcastItem.start_time}} 至 {{broadcastItem.end_time}}</span>
+                    </td>
+                    <td width="10%">
+                        <span>{{broadcastItem.type | broadcastStatusFilter}}</span>
+                    </td>
+                    <td class="order-actions">
+                        <div>
+                            <a ng-href="/Home/VhallLive/shows/id/{{broadcastItem.id}}.html"><span class="action-first">观看直播</span></a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--the paing section-->
+        <pagination target-data="$ctrl.theList" on-paging-finish="$ctrl.dataSlicer($event.start,$event.ends)"></pagination>
+
+    </div>
+
+</div>
