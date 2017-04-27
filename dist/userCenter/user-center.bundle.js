@@ -7783,8 +7783,6 @@ var importAll = function (r) {
     r(keys[i])
   }
 }
-
-
 /**
  * 个人中心组件
  */
@@ -7794,7 +7792,7 @@ __webpack_require__(175)
 // // 用户中心 - 个人中心模组
 __webpack_require__(191)
 
-var personalCenter = __webpack_require__(216)
+var personalCenter = __webpack_require__(221)
 importAll(personalCenter)
 
 /**
@@ -7806,7 +7804,7 @@ __webpack_require__(150)
 // 企业中心模组定义
 __webpack_require__(155)
 
-var personalCenter = __webpack_require__(217)
+var personalCenter = __webpack_require__(222)
 importAll(personalCenter)
 
 // TODO
@@ -7820,7 +7818,7 @@ __webpack_require__(203)
 // 厂商中心 - 模组定义
 __webpack_require__(208)
 
-var personalCenter = __webpack_require__(218)
+var personalCenter = __webpack_require__(223)
 importAll(personalCenter)
 
 /***/ }),
@@ -45854,19 +45852,9 @@ angular
 
 /***/ }),
 /* 150 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-angular
-    .module('entp.core', [])
-
-// 企业用户信息获取
-__webpack_require__(148)
-// 企业成员
-__webpack_require__(149)
-// 企业课程
-__webpack_require__(147)
-__webpack_require__(146)
-
+angular.module('entp.core', [])
 
 /***/ }),
 /* 151 */
@@ -46697,47 +46685,10 @@ angular
 
 /***/ }),
 /* 175 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 // generic functions. mainly for filters and services.
 angular.module('personal.core', [])
-
-/**
- * generic services
- */
-// user infos service
-__webpack_require__(184)
-// user course comment
-__webpack_require__(172)
-
-/**
- * component specific services
- */
-
-// my course service
-__webpack_require__(176)
-// subscription service
-__webpack_require__(183)
-__webpack_require__(182)
-// broadcast booking
-__webpack_require__(169)
-__webpack_require__(170)
-// favourited courses service
-__webpack_require__(173)
-// browsed course service
-__webpack_require__(171)
-// notes
-__webpack_require__(177)
-// questions
-__webpack_require__(180)
-// receipt
-__webpack_require__(181)
-// orders service
-__webpack_require__(179)
-__webpack_require__(178) // filter for payment status, return coresponding text.
-// personal messages
-__webpack_require__(174)
-
 
 /***/ }),
 /* 176 */
@@ -48164,15 +48115,9 @@ angular
 
 /***/ }),
 /* 203 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 angular.module('provider.core', [])
-
-// 厂商信息服务
-__webpack_require__(204)
-// 厂商课程服务
-__webpack_require__(202)
-
 
 /***/ }),
 /* 204 */
@@ -48182,11 +48127,15 @@ angular
   .module('provider.core')
   .factory('providerInfoService', ['$http', 'urlFixer', function ($http, urlFixer) {
     var getUserInfo = function () {
-      return $http.get(urlFixer.pre + '/User/Firms/firminfo' + urlFixer.sub, { cache: true })
+      return $http.get(urlFixer.pre + '/User/Firms/firminfo' + urlFixer.sub, {
+        cache: true
+      })
     }
 
     var editUserInfo = function (data) {
-      return $http.post(urlFixer.pre + '/User/Firms/edit_firm' + urlFixer.sub, { data: data })
+      return $http.post(urlFixer.pre + '/User/Firms/edit_firm' + urlFixer.sub, {
+        data: data
+      })
     }
 
     return {
@@ -48194,7 +48143,6 @@ angular
       editUserInfo: editUserInfo
     }
   }])
-
 
 /***/ }),
 /* 205 */
@@ -48749,10 +48697,36 @@ module.exports = __webpack_require__(61);
 
 /***/ }),
 /* 215 */,
-/* 216 */
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */
+/***/ (function(module, exports) {
+
+// PLACE HOLDER personal center addtional prefix.
+
+/***/ }),
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./core.broadcast.service.js": 169,
+	"./core.brodcast.filter.js": 170,
+	"./core.browsed.service.js": 171,
+	"./core.course-comments.service.js": 172,
+	"./core.favourited.service.js": 173,
+	"./core.messages.service.js": 174,
+	"./core.my-course.service.js": 176,
+	"./core.notes.service.js": 177,
+	"./core.oders-status.filter.js": 178,
+	"./core.orders.service.js": 179,
+	"./core.question.service.js": 180,
+	"./core.recipient.service.js": 181,
+	"./core.subStauts.filter.js": 182,
+	"./core.subscription.service.js": 183,
+	"./core.urlPrefix.service.js": 220,
+	"./core.user.service.js": 184,
 	"./personal.broadcast.component.js": 185,
 	"./personal.browsed.component.js": 186,
 	"./personal.courses.component.js": 187,
@@ -48784,13 +48758,17 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 216;
+webpackContext.id = 221;
 
 /***/ }),
-/* 217 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./core.entp-course.filter.js": 146,
+	"./core.entp-courses.service.js": 147,
+	"./core.entp-info.service.js": 148,
+	"./core.members.service.js": 149,
 	"./entp.courses.component.js": 151,
 	"./entp.courses.details.component.js": 152,
 	"./entp.edit-info.component.js": 153,
@@ -48813,13 +48791,15 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 217;
+webpackContext.id = 222;
 
 /***/ }),
-/* 218 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
+	"./core.courses.service.js": 202,
+	"./core.provider-info.service.js": 204,
 	"./provider.courses.component.js": 205,
 	"./provider.courses.details.component.js": 206,
 	"./provider.edit-info.component.js": 207,
@@ -48841,7 +48821,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 218;
+webpackContext.id = 223;
 
 /***/ })
 /******/ ]);

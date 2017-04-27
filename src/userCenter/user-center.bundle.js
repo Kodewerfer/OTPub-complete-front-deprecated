@@ -32,8 +32,6 @@ var importAll = function (r) {
     r(keys[i])
   }
 }
-
-
 /**
  * 个人中心组件
  */
@@ -43,7 +41,7 @@ require('./ng-personal/core.module')
 // // 用户中心 - 个人中心模组
 require('./ng-personal/personal.module')
 
-var personalCenter = require.context('./ng-personal/', false, /\.component.js$/)
+var personalCenter = require.context('./ng-personal/', false, /\.component.js$|\.service.js$|.filter.js$/)
 importAll(personalCenter)
 
 /**
@@ -55,7 +53,7 @@ require('./ng-entp/core.module')
 // 企业中心模组定义
 require('./ng-entp/entp.module')
 
-var personalCenter = require.context('./ng-entp/', false, /\.component.js$/)
+var personalCenter = require.context('./ng-entp/', false, /\.component.js$|\.service.js$|.filter.js$/)
 importAll(personalCenter)
 
 // TODO
@@ -69,5 +67,5 @@ require('./ng-provider/core.module')
 // 厂商中心 - 模组定义
 require('./ng-provider/provider.module')
 
-var personalCenter = require.context('./ng-provider/', false, /\.component.js$/)
+var personalCenter = require.context('./ng-provider/', false, /\.component.js$|\.service.js$|.filter.js$/)
 importAll(personalCenter)
