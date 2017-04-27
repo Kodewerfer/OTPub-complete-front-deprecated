@@ -1,0 +1,177 @@
+// -- 企业中心
+&.entp {
+    .view-head {
+        &:extend(.page-contents-wrapper .contents-section.personal .view-head all);
+    }
+    .view-body {
+        &:extend(.page-contents-wrapper .contents-section.personal .view-body all);
+    }
+    // 修改企业信息
+    .edit-info {
+        .view-body {
+            border: 1px solid #ccc;
+            border-top: 0;
+            padding: 7em 0;
+            .entp-infos {
+                .info-row {
+                    padding-left: 35%;
+                    position: relative;
+                    font-size: 14px;
+                    margin-bottom: 1.5em;
+                    span {
+                        cursor: default;
+                        display: inline-block;
+                        &:first-child {
+                            text-align: left;
+                            width: 15%;
+                            margin-right: 1em;
+                        }
+                    }
+                    input {
+                        &:focus {
+                            color: @colorAct;
+                        }
+                    }
+                    a {
+                        color: @colorAct;
+                        position: absolute;
+                        left: 75%;
+                        top: 0;
+                        &:hover {
+                            color: lighten(@colorAct, 10%);
+                        }
+                        &:focus {
+                            color: darken(@colorAct, 10%);
+                        }
+                    }
+                }
+                .button-row {
+                    padding-left: 40%;
+                    .btn-confirm {
+                        display: inline-block;
+                        padding: .85em 4.5em;
+                        background-color: lighten(@colorAct, 20%);
+                        border-radius: 5px;
+                        span {
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 1em;
+                            color: white;
+                        }
+                        .mixin_oButton();
+                    }
+                }
+            }
+            .user-protrait {
+                text-align: center;
+                &>button {
+                    padding-top: .5em;
+                    display: inline-block;
+                    font-size: 13px;
+                    color: @colorAct;
+                    background-color: transparent;
+                    .mixin_oButton();
+                }
+                .img-holder {
+                    position: relative;
+                    width: 35%;
+                    display: block;
+                    margin: auto;
+                    img {
+                        width: 100%;
+                    }
+                    .upload-prgress {
+                        z-index: 1020;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: .35em;
+                        background-color: @colorAct;
+                        opacity: .6;
+                    }
+                }
+            }
+        }
+    }
+    // 我的成员
+    .my-members {
+        .view-head {
+            margin-bottom: 2em;
+        }
+        .view-body {
+            border: 0;
+            .search-bar {
+                border: 1px solid #ccc;
+                background-color: #f4f2f2;
+                padding: .75em 3.5em;
+                position: relative;
+                .clearfix();
+                &>* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                .search-block {
+                    padding: 0 .65em;
+                    display: inline-block;
+                    background-color: #fff;
+                    font-size: 14px;
+                    border: 1px solid #ccc;
+                    input {
+                        outline: 0;
+                        width: 7.5em;
+                        padding: .35em;
+                    }
+                }
+                .btn-search {
+                    margin-left: .5em;
+                    border-radius: 5px;
+                    padding: 9px;
+                    font-size: 15px;
+                    color: white;
+                    background-color: #4d8be5;
+                    &:hover {
+                        background-color: lighten(#4d8be5, 10%);
+                    }
+                    &:active {
+                        background-color: darken(#4d8be5, 10%);
+                    }
+                }
+                .righty-wrapper {
+                    float: right;
+                    margin-top: .85em;
+                    .btn-extract {
+                        outline: 0;
+                        border-radius: 5px;
+                        color: white;
+                        font-size: 15px;
+                        font-weight: 500;
+                        background-color: @colorAct;
+                        padding: 5px 10px;
+                        .mixin_oButton();
+                    }
+                }
+            }
+            table {
+                .mixin_entp_dataTable();
+            }
+        }
+    }
+    // 我的课程
+    .entp-courses {
+        &:extend(.page-contents-wrapper .contents-section.personal .my-orders all);
+        .download-link {
+            text-align: right;
+            margin-bottom: .5em;
+            padding-right: .5em;
+            font-size: 14px;
+            color: @colorAct;
+            a:hover {
+                color: lighten(@colorAct, 20%);
+            }
+        }
+        td.valid-time {
+            width: 18%;
+        }
+    }
+}

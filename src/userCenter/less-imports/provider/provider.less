@@ -1,0 +1,21 @@
+// -- 厂商中心
+&.provider {
+    .view-head {
+        &:extend(.page-contents-wrapper .contents-section.personal .view-head all);
+    }
+    .view-body {
+        &:extend(.page-contents-wrapper .contents-section.personal .view-body all);
+    }
+    // 修改企业信息
+    .edit-info {
+        &:extend(.page-contents-wrapper .contents-section.entp .edit-info all);
+    }
+    // 我的成员
+    .course-participant {
+        &:extend(.page-contents-wrapper .contents-section.entp .my-members all);
+    }
+    // 我的课程
+    .provider-courses {
+        &:extend(.page-contents-wrapper .contents-section.personal .my-orders all);
+    }
+}
