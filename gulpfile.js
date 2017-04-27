@@ -11,7 +11,7 @@ var named = require('vinyl-named')
 var rename = require('gulp-rename')
 var connect = require('gulp-connect')
 // webpack
-var webpack = require('webpack-stream')
+var webpack = require('webpack2-stream-watch')
 
 // SRC and Dist Path configurations.
 const IOPATH = {

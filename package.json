@@ -5,8 +5,9 @@
   "dependencies": {},
   "devDependencies": {
     "vinyl-named": "*",
-    "webpack-stream": "*",
+    "webpack2-stream-watch": "*",
     "css-loader": "*",
+    "sass-loader": "*",
     "html-loader": "*",
     "style-loader": "*",
     "file-loader": "*",

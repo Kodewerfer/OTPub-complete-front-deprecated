@@ -3,26 +3,72 @@ var path = require('path')
 var webpack = require('webpack')
 module.exports = {
   watch: true,
-  module: {
-    loaders: [
-      // css loader
-      {
-        test: /\.css$/,
-        loader: 'style!css'
-      },
-      // HTML loader mainly for angular templates.
-      {
-        test: /\.html$/,
-        loader: 'html'
-      },
-      // load font and images files
-      {
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-        loader: 'url-loader?&name=[name]-[hash].[ext]'
-      }
-
-    ]
+  target: 'web',
+  stats: {
+    colors: true,
+    assets: false,
+    errors: true
   },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: [{
+          loader: 'style-loader'
+        },
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1
+          }
+        }
+      ]
+    }, {
+      test: /\.scss$/,
+      use: [{
+          loader: 'style-loader'
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            importLoaders: 1
+          }
+        }
+      ]
+    }, {
+      test: /\.html$/,
+      use: [{
+        loader: 'html-loader',
+        options: {
+          minimize: true
+        }
+      }]
+    }, {
+      test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+      use: [{
+        loader: 'url-loader'
+      }]
+    }]
+  },
+  // module: {
+  //   loaders: [
+  //     // css loader
+  //     {
+  //       test: /\.css$/,
+  //       loader: 'style!css'
+  //     },
+  //     // HTML loader mainly for angular templates.
+  //     {
+  //       test: /\.html$/,
+  //       loader: 'html'
+  //     },
+  //     // load font and images files
+  //     {
+  //       test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
+  //       loader: 'url-loader?&name=[name]-[hash].[ext]'
+  //     }
+
+  //   ]
+  // },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -31,7 +77,8 @@ module.exports = {
     })
   ],
   resolve: {
-    root: [
+    modules: [
+      'node_modules',
       path.resolve('./bower_components')
     ],
     alias: {
