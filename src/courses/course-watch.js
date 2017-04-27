@@ -1,4 +1,3 @@
-var $ = window.jQuery = window.$ = require('jquery')
 // video js importing
 var vjs = window.videojs = require('videojs/video.min')
 require('videojs/ie8/videojs-ie8.min')

@@ -1,6 +1,3 @@
-
-var $ = require('jquery')
-
 // page partials related
 $(document).ready(function () {
   // side infomation bar

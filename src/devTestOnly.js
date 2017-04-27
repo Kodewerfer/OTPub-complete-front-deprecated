@@ -1,6 +1,4 @@
 ; (function () {
-    var $ = require('jquery');
-
     var $wrapper = $('.page-contents-wrapper');
 
     $(document).ready(function () {

@@ -1,13 +1,20 @@
 // the webpack here is just for loading js files.
 var path = require('path')
+var webpack = require('webpack')
 module.exports = {
   watch: true,
   module: {
     loaders: [
       // css loader
-      { test: /\.css$/, loader: 'style!css' },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
       // HTML loader mainly for angular templates.
-      { test: /\.html$/, loader: 'html' },
+      {
+        test: /\.html$/,
+        loader: 'html'
+      },
       // load font and images files
       {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
@@ -16,12 +23,19 @@ module.exports = {
 
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    })
+  ],
   resolve: {
     root: [
       path.resolve('./bower_components')
     ],
     alias: {
-      jquery: 'jquery/dist/jquery.min.js',
+      jquery: 'jquery/src/jquery',
       sticky: 'sticky-kit/jquery.sticky-kit.min.js',
       slick: 'slick-carousel/slick/',
       videojs: 'video.js/dist',

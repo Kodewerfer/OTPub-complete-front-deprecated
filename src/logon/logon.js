@@ -1,6 +1,5 @@
 ; (function () {
   var validURl = '/User/Login/dologin'
-  var $ = jQuery = require('jquery')
   var beforeSubmitCheck = require('./logon-submit')
 
   $(document).ready(function () {

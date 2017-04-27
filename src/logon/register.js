@@ -1,6 +1,5 @@
 ; (function () {
   var validURl = '/User/Reg/doregister'
-  var $ = jQuery = require('jquery')
   var beforeSubmitCheck = require('./logon-submit')
 
   $(document).ready(function () {

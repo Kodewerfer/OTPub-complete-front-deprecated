@@ -1,5 +1,4 @@
 ;(function () {
-  var $ = require('jquery')
   $(document).ready(function () {
     $('.blockies-two').hover(function () {
       $(this).find('.bg1').attr('src', require('../../images/entp-template/bg4.png'))

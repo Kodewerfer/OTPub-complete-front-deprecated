@@ -1,6 +1,4 @@
 ; (function () {
-  var $ = require('jquery')
-
   $(document).ready(function () {
     $('body').on('click.dropdown', '.upper-dropdown>a', function (ev) {
       ev.preventDefault()

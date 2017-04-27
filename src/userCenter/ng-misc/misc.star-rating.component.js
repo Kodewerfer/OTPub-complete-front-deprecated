@@ -8,8 +8,6 @@ angular
     controller: [function () {
       var that = this
       this.$postLink = function () {
-        var $ = angular.element
-
         $(document.querySelectorAll('.stars-rating i')).on('click', function () {
           var starNum = parseInt($(this).attr('data-starNum'))
           // stars that "follows" become solid colored star

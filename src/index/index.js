@@ -11,8 +11,6 @@ require('slick/slick.js')
 
   ; (function () {
     // jquery
-    var $ = window.jQuery = require('jquery')
-
     require('bootstrap-modal/css/bootstrap.modal.css')
     require('bootstrap-modal/js/bootstrap-modal.min.js')
 

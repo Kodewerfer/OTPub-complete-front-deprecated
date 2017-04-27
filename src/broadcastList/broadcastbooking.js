@@ -1,12 +1,10 @@
-; (function () {
-  var $ = jQuery = require('jquery')
-
-  jQuery.extend(window, window.broadcastBooking,
-    {
-      broadcastBooking: {
-        currentEngage: null
-      }
-    })
+;
+(function () {
+  jQuery.extend(window, window.broadcastBooking, {
+    broadcastBooking: {
+      currentEngage: null
+    }
+  })
 
   require('bootstrap-modal/css/bootstrap.modal.css')
   require('bootstrap-modal/js/bootstrap-modal.min.js')
@@ -15,17 +13,16 @@
 
   $(document).ready(function () {
     // 添加form接口
-    jQuery.extend(window, window.formEvo,
-      {
-        formEvo: {
-          ajaxComplete: function () {
-            window.broadcastBooking.currentEngage.text('已预约')
-            window.broadcastBooking.currentEngage.css('cursor', 'default')
-            window.broadcastBooking.currentEngage.removeAttr('data-target')
-          }
-
+    jQuery.extend(window, window.formEvo, {
+      formEvo: {
+        ajaxComplete: function () {
+          window.broadcastBooking.currentEngage.text('已预约')
+          window.broadcastBooking.currentEngage.css('cursor', 'default')
+          window.broadcastBooking.currentEngage.removeAttr('data-target')
         }
-      })
+
+      }
+    })
 
     function myalert(option) {
       var options = {
@@ -36,7 +33,7 @@
         content: '',
         quickClose: false,
         okValue: '确 定', //	确定按钮
-        ok: function () { }, // 确定返回函数
+        ok: function () {}, // 确定返回函数
         modal: true
       }
 
@@ -76,8 +73,9 @@
       //  判断当弹出预约成功框时直接提交视频编号
       if (currentTarget === '#formModal2') {
         $.post(
-          '/Home/VhallLive/ajaxOrder.html',
-          { 'videoNumber': $videoNumber },
+          '/Home/VhallLive/ajaxOrder.html', {
+            'videoNumber': $videoNumber
+          },
           function (data) {
             var dd = myalert({
               title: '提示',

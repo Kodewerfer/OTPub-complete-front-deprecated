@@ -45,12 +45,12 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(48);
+	module.exports = __webpack_require__(138);
 
 
 /***/ },
 
-/***/ 48:
+/***/ 138:
 /***/ function(module, exports) {
 
 	angular.module('outpubEvo.core', [])

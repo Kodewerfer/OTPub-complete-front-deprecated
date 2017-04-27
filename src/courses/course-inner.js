@@ -1,5 +1,4 @@
 ; (function () {
-  var $ = jQuery = require('jquery')
   require('sticky')
 
   // tab switch.
