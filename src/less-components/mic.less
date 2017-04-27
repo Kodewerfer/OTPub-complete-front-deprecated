@@ -7,6 +7,17 @@
 */
 
 // box shadow hoverer.
+.clearfix() {
+  *zoom: 1;
+  &:after, &:before {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
 .mixin_oButton() {
     cursor: pointer;
     outline: 0;
