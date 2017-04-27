@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 213);
+/******/ 	return __webpack_require__(__webpack_require__.s = 214);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -7762,13 +7762,13 @@ __webpack_require__(62)
 // ng file upload
 __webpack_require__(102)
 
-
 // 用户中心 核心服务
 __webpack_require__(143)
 // 用户中心 总模组定义
-__webpack_require__(212)
+__webpack_require__(213)
 // 用户中心 路由设置 （ui-router）
-__webpack_require__(211)
+__webpack_require__(212)
+
 
 /**
  * 用户中心 - 零散组件
@@ -7776,62 +7776,26 @@ __webpack_require__(211)
 // 零散组件模组
 __webpack_require__(160)
 
+var importAll = function (r) {
+  var keys = r.keys()
+  // r.keys().forEach(key => cache[key] = r(key));
+  for (var i = 0; i < keys.length; i++) {
+    r(keys[i])
+  }
+}
+
+
 /**
  * 个人中心组件
  */
-// 个人中心 核心服务
-__webpack_require__(174)
+// // 个人中心 核心服务
+__webpack_require__(175)
 
-// 用户中心 - 个人中心模组
-__webpack_require__(190)
-
-// - 主框架
-__webpack_require__(193)
-
-// -- 欢迎页面
-__webpack_require__(200)
-
-// -- 顶部显示
-__webpack_require__(199)
-
-// -- 站内信
-__webpack_require__(189)
-
-// -- 站内信 - 阅读
-__webpack_require__(195)
-
-// -- 修改资料
-__webpack_require__(187)
-
-// -- 技术课程
-__webpack_require__(186)
-
-// -- 收藏课程
-__webpack_require__(188)
-
-// -- 直播预约
-__webpack_require__(184)
-
-// -- 预览课程
-__webpack_require__(185)
-
-// -- 卡包管理
-__webpack_require__(198)
-
-// -- 我的问答
-__webpack_require__(194)
-
-// -- 我的简历
-__webpack_require__(197)
-
-// -- 我的笔记
+// // 用户中心 - 个人中心模组
 __webpack_require__(191)
 
-// -- 我的发票
-__webpack_require__(196)
-
-// -- 我的订单
-__webpack_require__(192)
+var personalCenter = __webpack_require__(216)
+importAll(personalCenter)
 
 /**
  * 企业中心组件
@@ -7842,26 +7806,8 @@ __webpack_require__(150)
 // 企业中心模组定义
 __webpack_require__(155)
 
-// -- 企业中心 主框架
-__webpack_require__(156)
-
-// -- 企业中心 顶部显示
-__webpack_require__(157)
-
-// -- 企业中心 欢迎页面
-__webpack_require__(158)
-
-// -- 企业中心 修改资料
-__webpack_require__(153)
-
-// -- 企业中心 我的成员
-__webpack_require__(154)
-
-// -- 企业中心 我的课程
-__webpack_require__(151)
-
-// -- 企业中心 我的课程 - 查看详情
-__webpack_require__(152)
+var personalCenter = __webpack_require__(217)
+importAll(personalCenter)
 
 // TODO
 
@@ -7870,28 +7816,12 @@ __webpack_require__(152)
  */
 // TODO
 // 厂商中心 - 核心
-__webpack_require__(202)
+__webpack_require__(203)
 // 厂商中心 - 模组定义
-__webpack_require__(207)
-
-// -- 主框架
 __webpack_require__(208)
 
-// -- 顶部显示
-__webpack_require__(209)
-
-// -- 欢迎页面
-__webpack_require__(210)
-
-// -- 修改信息
-__webpack_require__(206)
-
-// -- 我的课程
-__webpack_require__(204)
-
-// -- 我的课程 - 成员
-__webpack_require__(205)
-
+var personalCenter = __webpack_require__(218)
+importAll(personalCenter)
 
 /***/ }),
 /* 62 */
@@ -46633,7 +46563,8 @@ angular.module('userCenter.misc')
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 168 */
+/* 168 */,
+/* 169 */
 /***/ (function(module, exports) {
 
 angular
@@ -46650,7 +46581,7 @@ angular
 
 
 /***/ }),
-/* 169 */
+/* 170 */
 /***/ (function(module, exports) {
 
 angular
@@ -46677,7 +46608,7 @@ angular
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports) {
 
 angular
@@ -46704,7 +46635,7 @@ angular
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
 angular
@@ -46721,7 +46652,7 @@ angular
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 angular
@@ -46743,7 +46674,7 @@ angular
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 angular
@@ -46765,7 +46696,7 @@ angular
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // generic functions. mainly for filters and services.
@@ -46775,41 +46706,41 @@ angular.module('personal.core', [])
  * generic services
  */
 // user infos service
-__webpack_require__(183)
+__webpack_require__(184)
 // user course comment
-__webpack_require__(171)
+__webpack_require__(172)
 
 /**
  * component specific services
  */
 
 // my course service
-__webpack_require__(175)
-// subscription service
-__webpack_require__(182)
-__webpack_require__(181)
-// broadcast booking
-__webpack_require__(168)
-__webpack_require__(169)
-// favourited courses service
-__webpack_require__(172)
-// browsed course service
-__webpack_require__(170)
-// notes
 __webpack_require__(176)
-// questions
-__webpack_require__(179)
-// receipt
-__webpack_require__(180)
-// orders service
-__webpack_require__(178)
-__webpack_require__(177) // filter for payment status, return coresponding text.
-// personal messages
+// subscription service
+__webpack_require__(183)
+__webpack_require__(182)
+// broadcast booking
+__webpack_require__(169)
+__webpack_require__(170)
+// favourited courses service
 __webpack_require__(173)
+// browsed course service
+__webpack_require__(171)
+// notes
+__webpack_require__(177)
+// questions
+__webpack_require__(180)
+// receipt
+__webpack_require__(181)
+// orders service
+__webpack_require__(179)
+__webpack_require__(178) // filter for payment status, return coresponding text.
+// personal messages
+__webpack_require__(174)
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports) {
 
 angular
@@ -46826,7 +46757,7 @@ angular
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 angular
@@ -46862,7 +46793,7 @@ angular
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 angular
@@ -46885,7 +46816,7 @@ angular
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 angular
@@ -46902,7 +46833,7 @@ angular
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 angular
@@ -46926,7 +46857,7 @@ angular
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 angular
@@ -46969,7 +46900,7 @@ angular
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 angular
@@ -46987,7 +46918,7 @@ angular
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 angular
@@ -47004,7 +46935,7 @@ angular
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 angular
@@ -47036,7 +46967,7 @@ angular
 
 
 /***/ }),
-/* 184 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47082,7 +47013,7 @@ angular
 
 
 /***/ }),
-/* 185 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -47172,7 +47103,7 @@ angular
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47276,7 +47207,7 @@ angular
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 修改资料页面
@@ -47420,7 +47351,7 @@ angular
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47482,7 +47413,7 @@ angular
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47545,7 +47476,7 @@ angular
 
 
 /***/ }),
-/* 190 */
+/* 191 */
 /***/ (function(module, exports) {
 
 angular
@@ -47559,7 +47490,7 @@ angular
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47665,7 +47596,7 @@ angular
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47794,7 +47725,7 @@ angular
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('userCenter.personal')
@@ -47804,7 +47735,7 @@ angular.module('userCenter.personal')
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47863,7 +47794,7 @@ angular
 
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47910,7 +47841,7 @@ angular
 
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48075,7 +48006,7 @@ angular
 
 
 /***/ }),
-/* 197 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48129,7 +48060,7 @@ angular
 
 
 /***/ }),
-/* 198 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48166,7 +48097,7 @@ angular
 
 
 /***/ }),
-/* 199 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48188,7 +48119,7 @@ angular
 
 
 /***/ }),
-/* 200 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 欢迎页面，如果地址有误显示该页面
@@ -48202,7 +48133,7 @@ angular
 
 
 /***/ }),
-/* 201 */
+/* 202 */
 /***/ (function(module, exports) {
 
 angular
@@ -48232,19 +48163,19 @@ angular
 
 
 /***/ }),
-/* 202 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('provider.core', [])
 
 // 厂商信息服务
-__webpack_require__(203)
+__webpack_require__(204)
 // 厂商课程服务
-__webpack_require__(201)
+__webpack_require__(202)
 
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, exports) {
 
 angular
@@ -48266,7 +48197,7 @@ angular
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48318,7 +48249,7 @@ angular
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48391,7 +48322,7 @@ angular
 
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 修改资料页面
@@ -48501,7 +48432,7 @@ angular
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, exports) {
 
 angular.module('userCenter.provider', [
@@ -48513,7 +48444,7 @@ angular.module('userCenter.provider', [
 
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('userCenter.provider')
@@ -48523,7 +48454,7 @@ angular.module('userCenter.provider')
 
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48545,7 +48476,7 @@ angular
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 欢迎页面，如果地址有误显示该页面
@@ -48557,7 +48488,7 @@ angular
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, exports) {
 
 angular
@@ -48795,7 +48726,7 @@ angular
 
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, exports) {
 
 angular
@@ -48810,11 +48741,107 @@ angular
 
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(61);
 
+
+/***/ }),
+/* 215 */,
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./personal.broadcast.component.js": 185,
+	"./personal.browsed.component.js": 186,
+	"./personal.courses.component.js": 187,
+	"./personal.edit-info.component.js": 188,
+	"./personal.favourited.component.js": 189,
+	"./personal.messages.component.js": 190,
+	"./personal.notes.component.js": 192,
+	"./personal.orders.component.js": 193,
+	"./personal.page-frame.component.js": 194,
+	"./personal.qna.component.js": 195,
+	"./personal.read-message.component.js": 196,
+	"./personal.receipt.component.js": 197,
+	"./personal.resume.component.js": 198,
+	"./personal.subscription.component.js": 199,
+	"./personal.top-bar.component.js": 200,
+	"./personal.welcome.component.js": 201
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 216;
+
+/***/ }),
+/* 217 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./entp.courses.component.js": 151,
+	"./entp.courses.details.component.js": 152,
+	"./entp.edit-info.component.js": 153,
+	"./entp.members.component.js": 154,
+	"./entp.page-frame.component.js": 156,
+	"./entp.top-bar.component.js": 157,
+	"./entp.welcome.component.js": 158
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 217;
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./provider.courses.component.js": 205,
+	"./provider.courses.details.component.js": 206,
+	"./provider.edit-info.component.js": 207,
+	"./provider.page-frame.component.js": 209,
+	"./provider.top-bar.component.js": 210,
+	"./provider.welcome.component.js": 211
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 218;
 
 /***/ })
 /******/ ]);
