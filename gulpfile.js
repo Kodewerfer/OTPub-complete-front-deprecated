@@ -19,9 +19,9 @@ const IOPATH = {
     src: ['./html/**/*.html']
   },
   less: {
-    src: ['./src/*/*.less', '!./src/less-components/**/*.less'], // Only compile these files.
-    bundleSrc: ['./src/**/*.less', '!./src/less-components/**/*.less', '!./src/*.less'], // any of these changes, compile above 'src'.
-    criticalSrc: ['./src/less-components/**/*.less'], // Critical components, common components and all that.
+    src: ['./src/*/*.less', '!./src/_less/**/*.less'], // Only compile these files.
+    bundleSrc: ['./src/**/*.less', '!./src/_less/**/*.less', '!./src/*.less'], // any of these changes, compile above 'src'.
+    criticalSrc: ['./src/_less/**/*.less'], // Critical components, common components and all that.
     specialSrc: ['./src/*.less'], // For odd and end files, like the 'compo.less'
     dist: './dist/'
   },
