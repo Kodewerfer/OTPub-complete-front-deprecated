@@ -1,11 +1,10 @@
 ; (function () {
   var validURl = '/User/Reg/doregister'
-  var beforeSubmitCheck = require('./logon-submit')
+  var beforeSubmitCheck = require('./parts/logon-submit')
 
-  $(document).ready(function () {
+  $(document).ready(function () { 
     // the before login check function
     beforeSubmitCheck(validURl)
-    $('.agreement').hide()
     $('.protocol').on('click', function () {
       $('.agreement').show()
       

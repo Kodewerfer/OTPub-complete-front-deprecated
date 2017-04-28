@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 159);
+/******/ 	return __webpack_require__(__webpack_require__.s = 160);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -12670,7 +12670,7 @@ module.exports = function (validationUrl) {
       content: '',
       quickClose: false,
       okValue: '确 定', //	确定按钮
-      ok: function () { }, // 确定返回函数
+      ok: function () {}, // 确定返回函数
       modal: true
     }
 
@@ -12697,11 +12697,12 @@ module.exports = function (validationUrl) {
   // 点击提交按钮
 
   $('form').on('submit', function (ev) {
-    
+
     ev.preventDefault()
     var required = false
     var requiredMsg = ''
-    $(this).children().find('.is-require').each(function () {
+    // 必选项检查
+    $(this).children().find('.is-require').add($(this).find('.is-require')).each(function () {
       if ($(this).val() === '') {
         required = true
         requiredMsg = $(this).data('require')
@@ -12709,10 +12710,11 @@ module.exports = function (validationUrl) {
       }
     })
 
-    if ($('#checkbox').is(':checked') == false) {
-     required = true
+    // 同意用户协议
+    if ($('#EUACheck').length && $('#EUACheck').is(':checked') == false) {
+      required = true
       requiredMsg = '请同意OTPUB注册协议'
-      
+
     }
 
     if (required) {
@@ -12720,7 +12722,7 @@ module.exports = function (validationUrl) {
         title: '警告',
         content: requiredMsg,
         okValue: '确定',
-        ok: function () { },
+        ok: function () {},
         modal: true
       }).showModal()
       return false
@@ -12746,7 +12748,6 @@ module.exports = function (validationUrl) {
     })
   })
 }
-
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
@@ -12764,17 +12765,17 @@ module.exports = function (validationUrl) {
 /* 112 */,
 /* 113 */,
 /* 114 */,
-/* 115 */
+/* 115 */,
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {; (function () {
   var validURl = '/User/Reg/doregister'
   var beforeSubmitCheck = __webpack_require__(100)
 
-  $(document).ready(function () {
+  $(document).ready(function () { 
     // the before login check function
     beforeSubmitCheck(validURl)
-    $('.agreement').hide()
     $('.protocol').on('click', function () {
       $('.agreement').show()
       
@@ -12791,7 +12792,6 @@ module.exports = function (validationUrl) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 116 */,
 /* 117 */,
 /* 118 */,
 /* 119 */,
@@ -12834,10 +12834,11 @@ module.exports = function (validationUrl) {
 /* 156 */,
 /* 157 */,
 /* 158 */,
-/* 159 */
+/* 159 */,
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(115);
+module.exports = __webpack_require__(116);
 
 
 /***/ })

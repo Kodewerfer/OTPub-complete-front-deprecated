@@ -1,7 +1,7 @@
 // video js importing
-var vjs = window.videojs = require('videojs/video.min')
+var vjs = window.videojs = require('videojs/video')
 require('videojs/ie8/videojs-ie8.min')
-require('videojs/video-js.min.css')
+require('videojs/video-js.css')
 require('videojs-sublime-skin/dist/videojs-sublime-skin.min.css')
 
 // scroll functions

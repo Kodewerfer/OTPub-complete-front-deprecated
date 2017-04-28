@@ -49,26 +49,6 @@ module.exports = {
       }]
     }]
   },
-  // module: {
-  //   loaders: [
-  //     // css loader
-  //     {
-  //       test: /\.css$/,
-  //       loader: 'style!css'
-  //     },
-  //     // HTML loader mainly for angular templates.
-  //     {
-  //       test: /\.html$/,
-  //       loader: 'html'
-  //     },
-  //     // load font and images files
-  //     {
-  //       test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-  //       loader: 'url-loader?&name=[name]-[hash].[ext]'
-  //     }
-
-  //   ]
-  // },
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',

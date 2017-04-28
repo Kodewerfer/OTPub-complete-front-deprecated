@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 214);
+/******/ 	return __webpack_require__(__webpack_require__.s = 217);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -7765,16 +7765,16 @@ __webpack_require__(102)
 // 用户中心 核心服务
 __webpack_require__(143)
 // 用户中心 总模组定义
-__webpack_require__(213)
+__webpack_require__(216)
 // 用户中心 路由设置 （ui-router）
-__webpack_require__(212)
+__webpack_require__(215)
 
 
 /**
  * 用户中心 - 零散组件
  */
 // 零散组件模组
-__webpack_require__(160)
+__webpack_require__(161)
 
 var importAll = function (r) {
   var keys = r.keys()
@@ -7787,12 +7787,12 @@ var importAll = function (r) {
  * 个人中心组件
  */
 // // 个人中心 核心服务
-__webpack_require__(175)
+__webpack_require__(176)
 
 // // 用户中心 - 个人中心模组
-__webpack_require__(191)
+__webpack_require__(193)
 
-var personalCenter = __webpack_require__(221)
+var personalCenter = __webpack_require__(169)
 importAll(personalCenter)
 
 /**
@@ -7800,11 +7800,11 @@ importAll(personalCenter)
  */
 
 // 企业中心 核心模组
-__webpack_require__(150)
+__webpack_require__(151)
 // 企业中心模组定义
-__webpack_require__(155)
+__webpack_require__(156)
 
-var personalCenter = __webpack_require__(222)
+var personalCenter = __webpack_require__(146)
 importAll(personalCenter)
 
 // TODO
@@ -7814,11 +7814,11 @@ importAll(personalCenter)
  */
 // TODO
 // 厂商中心 - 核心
-__webpack_require__(203)
+__webpack_require__(206)
 // 厂商中心 - 模组定义
-__webpack_require__(208)
+__webpack_require__(211)
 
-var personalCenter = __webpack_require__(223)
+var personalCenter = __webpack_require__(204)
 importAll(personalCenter)
 
 /***/ }),
@@ -45759,6 +45759,39 @@ angular
 
 /***/ }),
 /* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./core.entp-course.filter.js": 147,
+	"./core.entp-courses.service.js": 148,
+	"./core.entp-info.service.js": 149,
+	"./core.members.service.js": 150,
+	"./entp.courses.component.js": 152,
+	"./entp.courses.details.component.js": 153,
+	"./entp.edit-info.component.js": 154,
+	"./entp.members.component.js": 155,
+	"./entp.page-frame.component.js": 157,
+	"./entp.top-bar.component.js": 158,
+	"./entp.welcome.component.js": 159
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 146;
+
+/***/ }),
+/* 147 */
 /***/ (function(module, exports) {
 
 angular
@@ -45779,7 +45812,7 @@ angular
 
 
 /***/ }),
-/* 147 */
+/* 148 */
 /***/ (function(module, exports) {
 
 angular
@@ -45807,7 +45840,7 @@ angular
 
 
 /***/ }),
-/* 148 */
+/* 149 */
 /***/ (function(module, exports) {
 
 angular
@@ -45829,7 +45862,7 @@ angular
 
 
 /***/ }),
-/* 149 */
+/* 150 */
 /***/ (function(module, exports) {
 
 angular
@@ -45851,13 +45884,13 @@ angular
 
 
 /***/ }),
-/* 150 */
+/* 151 */
 /***/ (function(module, exports) {
 
 angular.module('entp.core', [])
 
 /***/ }),
-/* 151 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -45936,7 +45969,7 @@ angular
 
 
 /***/ }),
-/* 152 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46000,7 +46033,7 @@ angular
 
 
 /***/ }),
-/* 153 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 修改资料页面
@@ -46108,7 +46141,7 @@ angular
 
 
 /***/ }),
-/* 154 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46176,7 +46209,7 @@ angular
 
 
 /***/ }),
-/* 155 */
+/* 156 */
 /***/ (function(module, exports) {
 
 angular
@@ -46189,7 +46222,7 @@ angular
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('userCenter.entp')
@@ -46199,7 +46232,7 @@ angular.module('userCenter.entp')
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46221,7 +46254,7 @@ angular
 
 
 /***/ }),
-/* 158 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 欢迎页面，如果地址有误显示该页面
@@ -46233,7 +46266,7 @@ angular
 
 
 /***/ }),
-/* 159 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46256,7 +46289,7 @@ angular
 
 
 /***/ }),
-/* 160 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // some odd and ends, like error displays.
@@ -46264,28 +46297,28 @@ angular
 angular.module('userCenter.misc', [])
 
 // 星级评价
-__webpack_require__(167)
+__webpack_require__(168)
 
 // ajax错误
-__webpack_require__(159)
+__webpack_require__(160)
 
 // 无数据
-__webpack_require__(162)
+__webpack_require__(163)
 
 // 无课程数据
-__webpack_require__(161)
+__webpack_require__(162)
 
 // 通用分页
-__webpack_require__(163)
 __webpack_require__(164)
+__webpack_require__(165)
 
 // 推荐内容
-__webpack_require__(165)
 __webpack_require__(166)
+__webpack_require__(167)
 
 
 /***/ }),
-/* 161 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46303,7 +46336,7 @@ angular
 
 
 /***/ }),
-/* 162 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46319,7 +46352,7 @@ angular
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
 // paging service
@@ -46399,7 +46432,7 @@ angular
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46444,7 +46477,7 @@ angular
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46478,7 +46511,7 @@ angular
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports) {
 
 angular.module('userCenter.misc')
@@ -46494,7 +46527,7 @@ angular.module('userCenter.misc')
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {angular
@@ -46551,8 +46584,61 @@ angular.module('userCenter.misc')
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 168 */,
 /* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./core.broadcast.service.js": 170,
+	"./core.brodcast.filter.js": 171,
+	"./core.browsed.service.js": 172,
+	"./core.course-comments.service.js": 173,
+	"./core.favourited.service.js": 174,
+	"./core.messages.service.js": 175,
+	"./core.my-course.service.js": 177,
+	"./core.notes.service.js": 178,
+	"./core.oders-status.filter.js": 179,
+	"./core.orders.service.js": 180,
+	"./core.question.service.js": 181,
+	"./core.recipient.service.js": 182,
+	"./core.subStauts.filter.js": 183,
+	"./core.subscription.service.js": 184,
+	"./core.urlPrefix.service.js": 185,
+	"./core.user.service.js": 186,
+	"./personal.broadcast.component.js": 187,
+	"./personal.browsed.component.js": 188,
+	"./personal.courses.component.js": 189,
+	"./personal.edit-info.component.js": 190,
+	"./personal.favourited.component.js": 191,
+	"./personal.messages.component.js": 192,
+	"./personal.notes.component.js": 194,
+	"./personal.orders.component.js": 195,
+	"./personal.page-frame.component.js": 196,
+	"./personal.qna.component.js": 197,
+	"./personal.read-message.component.js": 198,
+	"./personal.receipt.component.js": 199,
+	"./personal.resume.component.js": 200,
+	"./personal.subscription.component.js": 201,
+	"./personal.top-bar.component.js": 202,
+	"./personal.welcome.component.js": 203
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 169;
+
+/***/ }),
+/* 170 */
 /***/ (function(module, exports) {
 
 angular
@@ -46569,7 +46655,7 @@ angular
 
 
 /***/ }),
-/* 170 */
+/* 171 */
 /***/ (function(module, exports) {
 
 angular
@@ -46596,7 +46682,7 @@ angular
 
 
 /***/ }),
-/* 171 */
+/* 172 */
 /***/ (function(module, exports) {
 
 angular
@@ -46623,7 +46709,7 @@ angular
 
 
 /***/ }),
-/* 172 */
+/* 173 */
 /***/ (function(module, exports) {
 
 angular
@@ -46640,7 +46726,7 @@ angular
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports) {
 
 angular
@@ -46662,7 +46748,7 @@ angular
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports) {
 
 angular
@@ -46684,14 +46770,14 @@ angular
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports) {
 
 // generic functions. mainly for filters and services.
 angular.module('personal.core', [])
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports) {
 
 angular
@@ -46708,7 +46794,7 @@ angular
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports) {
 
 angular
@@ -46744,7 +46830,7 @@ angular
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports) {
 
 angular
@@ -46767,7 +46853,7 @@ angular
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports) {
 
 angular
@@ -46784,7 +46870,7 @@ angular
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports) {
 
 angular
@@ -46808,7 +46894,7 @@ angular
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports) {
 
 angular
@@ -46851,7 +46937,7 @@ angular
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports) {
 
 angular
@@ -46869,7 +46955,7 @@ angular
 
 
 /***/ }),
-/* 183 */
+/* 184 */
 /***/ (function(module, exports) {
 
 angular
@@ -46886,7 +46972,13 @@ angular
 
 
 /***/ }),
-/* 184 */
+/* 185 */
+/***/ (function(module, exports) {
+
+// PLACE HOLDER personal center addtional prefix.
+
+/***/ }),
+/* 186 */
 /***/ (function(module, exports) {
 
 angular
@@ -46918,7 +47010,7 @@ angular
 
 
 /***/ }),
-/* 185 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -46964,7 +47056,7 @@ angular
 
 
 /***/ }),
-/* 186 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -47054,7 +47146,7 @@ angular
 
 
 /***/ }),
-/* 187 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47158,7 +47250,7 @@ angular
 
 
 /***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 修改资料页面
@@ -47302,7 +47394,7 @@ angular
 
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47364,7 +47456,7 @@ angular
 
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47427,7 +47519,7 @@ angular
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports) {
 
 angular
@@ -47441,7 +47533,7 @@ angular
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47547,7 +47639,7 @@ angular
 
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47676,7 +47768,7 @@ angular
 
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('userCenter.personal')
@@ -47686,7 +47778,7 @@ angular.module('userCenter.personal')
 
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47745,7 +47837,7 @@ angular
 
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47792,7 +47884,7 @@ angular
 
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -47957,7 +48049,7 @@ angular
 
 
 /***/ }),
-/* 198 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48011,7 +48103,7 @@ angular
 
 
 /***/ }),
-/* 199 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48048,7 +48140,7 @@ angular
 
 
 /***/ }),
-/* 200 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48070,7 +48162,7 @@ angular
 
 
 /***/ }),
-/* 201 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 欢迎页面，如果地址有误显示该页面
@@ -48084,7 +48176,37 @@ angular
 
 
 /***/ }),
-/* 202 */
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./core.courses.service.js": 205,
+	"./core.provider-info.service.js": 207,
+	"./provider.courses.component.js": 208,
+	"./provider.courses.details.component.js": 209,
+	"./provider.edit-info.component.js": 210,
+	"./provider.page-frame.component.js": 212,
+	"./provider.top-bar.component.js": 213,
+	"./provider.welcome.component.js": 214
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 204;
+
+/***/ }),
+/* 205 */
 /***/ (function(module, exports) {
 
 angular
@@ -48114,13 +48236,13 @@ angular
 
 
 /***/ }),
-/* 203 */
+/* 206 */
 /***/ (function(module, exports) {
 
 angular.module('provider.core', [])
 
 /***/ }),
-/* 204 */
+/* 207 */
 /***/ (function(module, exports) {
 
 angular
@@ -48145,7 +48267,7 @@ angular
   }])
 
 /***/ }),
-/* 205 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48197,7 +48319,7 @@ angular
 
 
 /***/ }),
-/* 206 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48270,7 +48392,7 @@ angular
 
 
 /***/ }),
-/* 207 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 修改资料页面
@@ -48380,7 +48502,7 @@ angular
 
 
 /***/ }),
-/* 208 */
+/* 211 */
 /***/ (function(module, exports) {
 
 angular.module('userCenter.provider', [
@@ -48392,7 +48514,7 @@ angular.module('userCenter.provider', [
 
 
 /***/ }),
-/* 209 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular.module('userCenter.provider')
@@ -48402,7 +48524,7 @@ angular.module('userCenter.provider')
 
 
 /***/ }),
-/* 210 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 angular
@@ -48424,7 +48546,7 @@ angular
 
 
 /***/ }),
-/* 211 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 欢迎页面，如果地址有误显示该页面
@@ -48436,7 +48558,7 @@ angular
 
 
 /***/ }),
-/* 212 */
+/* 215 */
 /***/ (function(module, exports) {
 
 angular
@@ -48674,7 +48796,7 @@ angular
 
 
 /***/ }),
-/* 213 */
+/* 216 */
 /***/ (function(module, exports) {
 
 angular
@@ -48689,139 +48811,11 @@ angular
 
 
 /***/ }),
-/* 214 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(61);
 
-
-/***/ }),
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */
-/***/ (function(module, exports) {
-
-// PLACE HOLDER personal center addtional prefix.
-
-/***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./core.broadcast.service.js": 169,
-	"./core.brodcast.filter.js": 170,
-	"./core.browsed.service.js": 171,
-	"./core.course-comments.service.js": 172,
-	"./core.favourited.service.js": 173,
-	"./core.messages.service.js": 174,
-	"./core.my-course.service.js": 176,
-	"./core.notes.service.js": 177,
-	"./core.oders-status.filter.js": 178,
-	"./core.orders.service.js": 179,
-	"./core.question.service.js": 180,
-	"./core.recipient.service.js": 181,
-	"./core.subStauts.filter.js": 182,
-	"./core.subscription.service.js": 183,
-	"./core.urlPrefix.service.js": 220,
-	"./core.user.service.js": 184,
-	"./personal.broadcast.component.js": 185,
-	"./personal.browsed.component.js": 186,
-	"./personal.courses.component.js": 187,
-	"./personal.edit-info.component.js": 188,
-	"./personal.favourited.component.js": 189,
-	"./personal.messages.component.js": 190,
-	"./personal.notes.component.js": 192,
-	"./personal.orders.component.js": 193,
-	"./personal.page-frame.component.js": 194,
-	"./personal.qna.component.js": 195,
-	"./personal.read-message.component.js": 196,
-	"./personal.receipt.component.js": 197,
-	"./personal.resume.component.js": 198,
-	"./personal.subscription.component.js": 199,
-	"./personal.top-bar.component.js": 200,
-	"./personal.welcome.component.js": 201
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 221;
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./core.entp-course.filter.js": 146,
-	"./core.entp-courses.service.js": 147,
-	"./core.entp-info.service.js": 148,
-	"./core.members.service.js": 149,
-	"./entp.courses.component.js": 151,
-	"./entp.courses.details.component.js": 152,
-	"./entp.edit-info.component.js": 153,
-	"./entp.members.component.js": 154,
-	"./entp.page-frame.component.js": 156,
-	"./entp.top-bar.component.js": 157,
-	"./entp.welcome.component.js": 158
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 222;
-
-/***/ }),
-/* 223 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./core.courses.service.js": 202,
-	"./core.provider-info.service.js": 204,
-	"./provider.courses.component.js": 205,
-	"./provider.courses.details.component.js": 206,
-	"./provider.edit-info.component.js": 207,
-	"./provider.page-frame.component.js": 209,
-	"./provider.top-bar.component.js": 210,
-	"./provider.welcome.component.js": 211
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 223;
 
 /***/ })
 /******/ ]);

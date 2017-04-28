@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 158);
+/******/ 	return __webpack_require__(__webpack_require__.s = 159);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -12670,7 +12670,7 @@ module.exports = function (validationUrl) {
       content: '',
       quickClose: false,
       okValue: '确 定', //	确定按钮
-      ok: function () { }, // 确定返回函数
+      ok: function () {}, // 确定返回函数
       modal: true
     }
 
@@ -12697,11 +12697,12 @@ module.exports = function (validationUrl) {
   // 点击提交按钮
 
   $('form').on('submit', function (ev) {
-    
+
     ev.preventDefault()
     var required = false
     var requiredMsg = ''
-    $(this).children().find('.is-require').each(function () {
+    // 必选项检查
+    $(this).children().find('.is-require').add($(this).find('.is-require')).each(function () {
       if ($(this).val() === '') {
         required = true
         requiredMsg = $(this).data('require')
@@ -12709,10 +12710,11 @@ module.exports = function (validationUrl) {
       }
     })
 
-    if ($('#checkbox').is(':checked') == false) {
-     required = true
+    // 同意用户协议
+    if ($('#EUACheck').length && $('#EUACheck').is(':checked') == false) {
+      required = true
       requiredMsg = '请同意OTPUB注册协议'
-      
+
     }
 
     if (required) {
@@ -12720,7 +12722,7 @@ module.exports = function (validationUrl) {
         title: '警告',
         content: requiredMsg,
         okValue: '确定',
-        ok: function () { },
+        ok: function () {},
         modal: true
       }).showModal()
       return false
@@ -12746,7 +12748,6 @@ module.exports = function (validationUrl) {
     })
   })
 }
-
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
@@ -12763,7 +12764,8 @@ module.exports = function (validationUrl) {
 /* 111 */,
 /* 112 */,
 /* 113 */,
-/* 114 */
+/* 114 */,
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function($) {; (function () {
@@ -12773,6 +12775,7 @@ module.exports = function (validationUrl) {
   $(document).ready(function () {
     // the before login check function
     beforeSubmitCheck(validURl)
+
     $('.form-block').on('click.changePlaceHolder', 'input:radio', function (ev) {
       var $theTag = $(this).next('span')
       var $uNameInp = $('input:text[name=username]')
@@ -12783,13 +12786,13 @@ module.exports = function (validationUrl) {
         $uNameInp.attr('placeholder', '请输入公司名')
       }
     })
+    
   })
 })()
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(12)))
 
 /***/ }),
-/* 115 */,
 /* 116 */,
 /* 117 */,
 /* 118 */,
@@ -12832,10 +12835,11 @@ module.exports = function (validationUrl) {
 /* 155 */,
 /* 156 */,
 /* 157 */,
-/* 158 */
+/* 158 */,
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(114);
+module.exports = __webpack_require__(115);
 
 
 /***/ })
