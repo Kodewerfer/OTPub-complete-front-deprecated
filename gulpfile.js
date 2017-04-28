@@ -10,6 +10,9 @@ var cleanCss = require('gulp-clean-css')
 var named = require('vinyl-named')
 var rename = require('gulp-rename')
 var connect = require('gulp-connect')
+// post css
+var postcss = require('gulp-postcss')
+var postassets = require('postcss-assets')
 // webpack
 var webpack = require('webpack2-stream-watch')
 
@@ -26,7 +29,7 @@ const IOPATH = {
     dist: './dist/'
   },
   js: {
-    src: ['./src/*/*.js', './src/*.js', '!./src/userCenter/**/*.js', '!./src/courses/ng-course-watch/**/*.js'],  // except for the angular related things.    
+    src: ['./src/*/*.js', './src/*.js', '!./src/userCenter/**/*.js', '!./src/courses/ng-course-watch/**/*.js'], // except for the angular related things.    
     dist: './dist/'
   },
   ngUserCenter: { // user center spec, full on angular module(with ui-router and all that.)
@@ -49,7 +52,9 @@ gulp.task('less-dist', function () {
   return gulp.src(IOPATH.less.src) // only compile the entry file    
     .pipe(less())
     .on('error', swallowError)
-    .pipe(cleanCss({ compatibility: 'ie8' }))
+    .pipe(cleanCss({
+      compatibility: 'ie8'
+    }))
     .pipe(gulp.dest(IOPATH.less.dist))
     .on('error', swallowError)
     .pipe(connect.reload())
@@ -62,9 +67,12 @@ gulp.task('less-doAll', function () {
     .pipe(sourceMap.init())
     .pipe(less())
     .on('error', swallowError)
+    .pipe(postcss([require('postcss-flexibility'), require('autoprefixer'), postassets({
+      loadPaths: ['./images/']
+    })]))
+    .on('error', swallowError)
     .pipe(sourceMap.write())
     .pipe(gulp.dest(IOPATH.less.dist))
-    .on('error', swallowError)
     .pipe(connect.reload())
 })
 
@@ -76,9 +84,12 @@ gulp.task('less', function () {
     .pipe(sourceMap.init())
     .pipe(less())
     .on('error', swallowError)
+    .pipe(postcss([require('postcss-flexibility'), require('autoprefixer'), postassets({
+      loadPaths: ['./images/']
+    })]))
+    .on('error', swallowError)
     .pipe(sourceMap.write())
     .pipe(gulp.dest(IOPATH.less.dist))
-    .on('error', swallowError)
     .pipe(connect.reload())
 })
 
@@ -90,9 +101,12 @@ gulp.task('less-specials', function () {
     .pipe(sourceMap.init())
     .pipe(less())
     .on('error', swallowError)
+    .pipe(postcss([require('postcss-flexibility'), require('autoprefixer'), postassets({
+      loadPaths: ['./images/']
+    })]))
+    .on('error', swallowError)
     .pipe(sourceMap.write())
     .pipe(gulp.dest(IOPATH.less.dist))
-    .on('error', swallowError)
     .pipe(connect.reload())
 })
 

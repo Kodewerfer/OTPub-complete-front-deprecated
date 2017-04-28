@@ -3,5 +3,23 @@
 // single pages spec
 @import '../_less/single-page-flush.less';
 .page-contents-wrapper {
-
+    .flush {
+        &.f-2 {
+            background: inline('sing-page/powerBi/f2.jpg') center center no-repeat;
+            min-height: height('sing-page/powerBi/f2.jpg');
+            background-size: cover;
+            .video-wrap {
+                opacity: 0; // display: none;
+                padding: 0;
+                width: 90%;
+                margin: auto;
+            }
+            &.active {
+                .video-wrap {
+                    opacity: 1;
+                    transition: opacity 1s; // display: block;
+                }
+            }
+        }
+    }
 }
