@@ -4,20 +4,32 @@
 @import '../_less/single-page-flush.less';
 .page-contents-wrapper {
     .flush {
+        &.fb {
+            background: inline('single-page/powerBi/fb.jpg') center center no-repeat;
+            background-size: cover;
+            img {
+                margin: auto;
+                display: block;
+                width: 85%;
+                padding-top: 3em;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+        }
         &.f-2 {
-            background: inline('sing-page/powerBi/f2.jpg') center center no-repeat;
-            min-height: height('sing-page/powerBi/f2.jpg');
+            background: inline('single-page/powerBi/f2.jpg') center center no-repeat; // min-height: height('single-page/powerBi/f2.jpg');
             background-size: cover;
             .video-wrap {
                 opacity: 0; // display: none;
                 padding: 0;
-                width: 90%;
+                width: 80%;
                 margin: auto;
+                transition: opacity 1.5s;
             }
             &.active {
                 .video-wrap {
                     opacity: 1;
-                    transition: opacity 1s; // display: block;
+                    transition: opacity 1.5s; // display: block;
                 }
             }
         }
